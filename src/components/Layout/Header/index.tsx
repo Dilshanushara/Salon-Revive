@@ -116,7 +116,6 @@ const Header: React.FC = () => {
                       className="text-black hover:text-primary text-24 inline-block me-2"
                     />
                   </button>
-                  <Signin />
                 </div>
               </div>
             )}
@@ -145,7 +144,6 @@ const Header: React.FC = () => {
                       className="text-white hover:text-primary text-24 inline-block me-2"
                     />
                   </button>
-                  <SignUp />
                 </div>
               </div>
             )}

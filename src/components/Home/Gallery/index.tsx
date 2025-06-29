@@ -33,7 +33,7 @@ const Gallery = () => {
               >
                 <Image
                   src={item.src}
-                  alt={item.name}
+                  alt="image"
                   width={600}
                   height={500}
                   className="object-cover w-full h-full"
