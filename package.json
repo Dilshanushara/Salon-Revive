@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build && npm run export",
-    "deploy": "gh-pages -d out"
+    "deploy": "npm run build && gh-pages -d out --branch gh-pages"
   },
   "homepage": "https://dilshanushara.github.io/Salon-Revive",
   "dependencies": {
