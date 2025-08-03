@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "./componenets/footer/footer";
 import Header from "./componenets/header/header";
-import AboutUs from "./pages/about-us/about";
+import About from "./pages/about/about";
 import Gallery from "./pages/gallery/gallery";
 import Home from "./pages/home/home";
 import Services from "./pages/services/services";
@@ -46,7 +46,7 @@ const App: React.FC = () => {
           <Home />
         </section>
         <section id="about-section">
-          <AboutUs />
+          <About />
         </section>
         <section id="services-section">
           <Services />

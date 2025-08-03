@@ -1,30 +1,95 @@
 import React from "react";
+import image3 from "../../assets/images/image3.jpg";
+import image4 from "../../assets/images/image4.jpg";
+import image5 from "../../assets/images/image5.jpg";
+import image6 from "../../assets/images/image6.jpg";
+import image7 from "../../assets/images/image7.jpg";
+import image8 from "../../assets/images/image8.jpg";
 
-// Replace these URLs with your own salon/gallery images
-const images = [
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400",
-  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400",
-  "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=400",
-  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-];
+const images = [image3, image4, image5, image6, image7, image8];
+
+const accentColor = "#b9a87a";
 
 const Gallery: React.FC = () => (
-  <div className="container text-center my-5 py-5">
-    <h2 className="mb-4 text-center">Gallery</h2>
-    <div className="row g-3">
-      {images.map((src, idx) => (
-        <div className="col-6 col-md-4" key={idx}>
-          <img
-            src={src}
-            alt={`Salon work ${idx + 1}`}
-            className="img-fluid rounded shadow"
-          />
-        </div>
-      ))}
+  <section
+    id="gallery-section"
+    style={{
+      background: "linear-gradient(120deg, #f8f9fa 60%, #f3e9d2 100%)",
+      width: "100vw",
+      marginLeft: "calc(-50vw + 50%)",
+      padding: "5rem 0",
+      overflow: "hidden",
+    }}
+  >
+    <div className="container-fluid" style={{ maxWidth: "1400px" }}>
+      <h2
+        className="mb-4 text-center"
+        style={{
+          color: accentColor,
+          fontFamily: "Montserrat, sans-serif",
+          fontWeight: 700,
+          fontSize: "2.7rem",
+          letterSpacing: "1.5px",
+          position: "relative",
+          display: "inline-block",
+        }}
+      >
+        Gallery
+        <span
+          style={{
+            display: "block",
+            height: "4px",
+            width: "60px",
+            backgroundColor: accentColor,
+            borderRadius: "2px",
+            margin: "8px auto 0",
+          }}
+        />
+      </h2>
+      <div className="row g-4 justify-content-center mt-4">
+        {images.map((src, idx) => (
+          <div className="col-6 col-md-4 col-lg-3" key={idx}>
+            <div
+              style={{
+                overflow: "hidden",
+                borderRadius: "1.5rem",
+                boxShadow: "0 4px 24px rgba(185,168,122,0.14)",
+                background: "#fff",
+                transition: "transform 0.3s cubic-bezier(.4,2,.3,1)",
+                cursor: "pointer",
+                aspectRatio: "1/1",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img
+                src={src}
+                alt={`Salon work ${idx + 1}`}
+                className="img-fluid"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "1.5rem",
+                  transition: "transform 0.4s cubic-bezier(.4,2,.3,1)",
+                  boxShadow: "0 2px 8px rgba(185,168,122,0.10)",
+                }}
+                onMouseOver={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.transform =
+                    "scale(1.09)";
+                }}
+                onMouseOut={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.transform =
+                    "scale(1)";
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
+  </section>
 );
 
 export default Gallery;
