@@ -66,7 +66,7 @@ const About: React.FC = () => (
             style={{
               position: "relative",
               width: "100%",
-              maxWidth: "530px", // increased from 430px to 530px
+              maxWidth: "530px",
               borderRadius: "1.5rem",
               overflow: "hidden",
               boxShadow: "0 2px 28px rgba(185,168,122,0.18)",
@@ -79,14 +79,12 @@ const About: React.FC = () => (
               style={{
                 borderRadius: "1.5rem",
                 width: "100%",
-                height: "410px", // increased from 340px to 410px
+                height: "410px",
                 objectFit: "cover",
                 transition: "transform .5s cubic-bezier(.4,2,.3,1)",
-                transform: "scale(1.07)", // slightly larger scale for pop
+                transform: "scale(1.07)",
               }}
             />
-            {/* Accent Circle */}
-
             {/* Accent Small Square */}
             <div
               style={{
@@ -161,6 +159,19 @@ const About: React.FC = () => (
         </div>
       </div>
     </div>
+    {/* Reduce top/bottom padding on mobile for less space between sections */}
+    <style>
+      {`
+        @media (max-width: 575px) {
+          #about-section {
+            padding: 1.4rem 0 1.2rem 0 !important;
+          }
+          #about-section .container-fluid {
+            padding: 1.1rem 0.3rem !important;
+          }
+        }
+      `}
+    </style>
   </section>
 );
 

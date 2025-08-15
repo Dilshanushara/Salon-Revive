@@ -28,13 +28,22 @@ const Services: React.FC = () => (
     style={{
       background: "linear-gradient(110deg, #f8f9fa 60%, #f3e9d2 100%)",
       width: "100vw",
-      marginLeft: "calc(-50vw + 50%)",
       padding: "4rem 0 3.5rem 0",
       overflow: "hidden",
     }}
   >
-    <div className="container" style={{ maxWidth: "1200px" }}>
-      <div style={{ marginBottom: "2.2rem" }}>
+    <div
+      className="container-fluid"
+      style={{
+        maxWidth: "1250px",
+        margin: "0 auto",
+        borderRadius: "1.5rem",
+        background: "rgba(255,255,255,0.88)",
+        boxShadow: "0 8px 38px rgba(185,168,122,0.07)",
+        padding: "2.7rem 2.2rem",
+      }}
+    >
+      <div style={{ marginBottom: "2.2rem", textAlign: "center" }}>
         <h2
           style={{
             color: accentColor,
@@ -42,9 +51,9 @@ const Services: React.FC = () => (
             fontWeight: 700,
             fontSize: "2.5rem",
             letterSpacing: "1.2px",
-            marginBottom: "0.1rem",
-            display: "inline-block",
+            marginBottom: "0.3rem",
             position: "relative",
+            display: "inline-block",
           }}
         >
           Our Services
@@ -53,9 +62,10 @@ const Services: React.FC = () => (
           style={{
             display: "block",
             height: "4px",
-            width: "50px",
+            width: "55px",
             backgroundColor: accentColor,
             borderRadius: "2px",
+            margin: "6px auto 0",
           }}
         />
         <p
@@ -64,27 +74,26 @@ const Services: React.FC = () => (
             color: "#4d3a00",
             fontSize: "1.1rem",
             fontWeight: 500,
-            maxWidth: "1000px",
+            maxWidth: "430px",
+            margin: "0 auto",
           }}
         >
           Discover our range of premium beauty and grooming services, tailored
           to elevate your style and well-being.
         </p>
       </div>
+      {/* Responsive grid for service cards */}
       <div
-        className="row justify-content-center g-4"
+        className="services-grid"
         style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "2rem",
           marginTop: "0.5rem",
         }}
       >
         {services.map((srv, idx) => (
-          <div
-            className="col-12 col-sm-6 col-lg-4 d-flex"
-            key={idx}
-            style={{
-              display: "flex",
-            }}
-          >
+          <div key={idx} style={{ display: "flex" }}>
             <div
               className="card h-100 text-center w-100 service-card"
               style={{
@@ -97,7 +106,7 @@ const Services: React.FC = () => (
                 position: "relative",
                 overflow: "hidden",
                 cursor: "pointer",
-                minHeight: "260px",
+                minHeight: "270px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
@@ -132,7 +141,7 @@ const Services: React.FC = () => (
                 style={{ position: "relative", zIndex: 2 }}
               >
                 <span
-                  className="mb-2"
+                  className="mb-2 service-icon"
                   style={{
                     fontSize: "2.3rem",
                     color: accentColor,
@@ -148,7 +157,7 @@ const Services: React.FC = () => (
                   {srv.icon}
                 </span>
                 <h5
-                  className="card-title"
+                  className="card-title service-title"
                   style={{
                     fontWeight: 600,
                     fontSize: "1.13rem",
@@ -160,7 +169,7 @@ const Services: React.FC = () => (
                   {srv.name}
                 </h5>
                 <p
-                  className="card-text"
+                  className="card-text service-desc"
                   style={{
                     color: "#7a6a2f",
                     fontSize: "1.02rem",
@@ -178,20 +187,60 @@ const Services: React.FC = () => (
     {/* Responsive styles */}
     <style>
       {`
-        @media (max-width: 767px) {
-          #services-section .service-card {
-            min-height: 210px;
-            font-size: 0.97rem;
-            margin-bottom: 1.2rem;
+        @media (max-width: 1100px) {
+          #services-section .container-fluid {
+            padding: 2rem 0.7rem;
           }
-          #services-section h2 {
-            font-size: 1.55rem !important;
+          #services-section .services-grid {
+            gap: 1.2rem;
           }
         }
-        @media (max-width: 575px) {
-          #services-section .service-card {
+        @media (max-width: 900px) {
+          #services-section .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 650px) {
+          #services-section .services-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          #services-section .card.service-card {
+            min-height: 155px;
+            font-size: 0.93rem;
+            margin-bottom: 0.8rem;
+            padding: 0.7rem 0.7rem;
+          }
+          #services-section .card-body {
+            padding: 1rem 0.3rem !important;
+          }
+          #services-section .service-icon {
+            font-size: 1.45rem !important;
+            width: 2.2rem !important;
+            height: 2.2rem !important;
+          }
+          #services-section .service-title {
+            font-size: 1rem !important;
+            margin-bottom: 0.4rem !important;
+          }
+          #services-section .service-desc {
+            font-size: 0.92rem !important;
+          }
+          #services-section h2 {
+            font-size: 1.35rem !important;
+          }
+        }
+        @media (max-width: 440px) {
+          #services-section .container-fluid {
+            padding: 0.7rem 0.1rem;
+          }
+          #services-section .card.service-card {
             box-shadow: 0 2px 16px rgba(185,168,122,0.11);
-            min-height: 170px;
+            min-height: 120px;
+            padding: 0.4rem 0.3rem;
+          }
+          #services-section .card-body {
+            padding: 0.7rem 0.1rem !important;
           }
         }
       `}
