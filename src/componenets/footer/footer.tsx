@@ -58,7 +58,7 @@ const Footer: React.FC = () => (
               className="bi bi-geo-alt-fill"
               style={{ color: accentColor, marginRight: 6 }}
             />
-            No 558 2nd Floor Galle Road Pamburana Matara, Matara, Sri Lanka
+            No 558 2nd Floor Galle Road Pamburana Matara, Sri Lanka
           </p>
           <p
             className="mb-1"

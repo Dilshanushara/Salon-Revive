@@ -34,16 +34,17 @@ const Services: React.FC = () => (
     }}
   >
     <div className="container" style={{ maxWidth: "1200px" }}>
-      <div className="text-center" style={{ marginBottom: "2.2rem" }}>
+      <div style={{ marginBottom: "2.2rem" }}>
         <h2
           style={{
             color: accentColor,
             fontFamily: "Montserrat, sans-serif",
             fontWeight: 700,
-            fontSize: "2.4rem",
-            letterSpacing: "1px",
+            fontSize: "2.5rem",
+            letterSpacing: "1.2px",
             marginBottom: "0.1rem",
             display: "inline-block",
+            position: "relative",
           }}
         >
           Our Services
@@ -55,7 +56,6 @@ const Services: React.FC = () => (
             width: "50px",
             backgroundColor: accentColor,
             borderRadius: "2px",
-            margin: "7px auto 0",
           }}
         />
         <p
@@ -64,8 +64,7 @@ const Services: React.FC = () => (
             color: "#4d3a00",
             fontSize: "1.1rem",
             fontWeight: 500,
-            maxWidth: "430px",
-            margin: "0 auto",
+            maxWidth: "1000px",
           }}
         >
           Discover our range of premium beauty and grooming services, tailored

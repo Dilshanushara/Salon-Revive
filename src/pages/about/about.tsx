@@ -1,4 +1,6 @@
 import React from "react";
+import homeImage2 from "../../assets/images/homeImage2.jpeg";
+import aboutImage from "../../assets/images/aboutImage.jpeg";
 
 const features = [
   { icon: "👩‍🎨", text: "Friendly, experienced professionals" },
@@ -64,22 +66,23 @@ const About: React.FC = () => (
             style={{
               position: "relative",
               width: "100%",
-              maxWidth: "430px",
+              maxWidth: "530px", // increased from 430px to 530px
               borderRadius: "1.5rem",
               overflow: "hidden",
               boxShadow: "0 2px 28px rgba(185,168,122,0.18)",
             }}
           >
             <img
-              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200"
+              src={aboutImage}
               alt="Smiling salon team"
               className="img-fluid"
               style={{
                 borderRadius: "1.5rem",
                 width: "100%",
-                height: "340px",
+                height: "410px", // increased from 340px to 410px
                 objectFit: "cover",
                 transition: "transform .5s cubic-bezier(.4,2,.3,1)",
+                transform: "scale(1.07)", // slightly larger scale for pop
               }}
             />
             {/* Accent Circle */}

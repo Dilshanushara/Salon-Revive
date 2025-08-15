@@ -2,8 +2,9 @@ import React from "react";
 import image2 from "../../assets/images/image2.jpg";
 import image1 from "../../assets/images/image1.webp";
 import image3 from "../../assets/images/image3.jpg";
+import homeImage from "../../assets/images/homeImage.jpeg";
 
-const heroImages = [image1, image2, image3];
+const heroImages = [image1, image2, image3, homeImage];
 
 const Home: React.FC = () => {
   return (
@@ -81,50 +82,48 @@ const Home: React.FC = () => {
           </div>
           {/* Right: Image */}
           <div className="col-lg-6 d-flex justify-content-center">
-            {/* Carousel (optional): You can add react-bootstrap Carousel or Swiper for multiple images */}
             <div
+              className="home-image-container"
               style={{
                 position: "relative",
-                width: "90%",
-                maxWidth: "450px",
-                minHeight: "340px",
+                width: "100%",
+                maxWidth: "540px",
+                minHeight: "420px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
               <img
-                src={image1}
+                src={homeImage}
                 alt="Salon interior"
                 className="img-fluid rounded shadow-lg"
                 style={{
-                  maxHeight: 400,
+                  maxHeight: 520,
                   objectFit: "cover",
                   width: "100%",
                   borderRadius: "1.5rem",
                   boxShadow: "0 8px 32px rgba(185,168,122,0.10)",
                   transition: "transform 0.5s cubic-bezier(.4,2,.3,1)",
-                  transform: "scale(1.03)",
+                  transform: "scale(1.07)",
                   background: "#fff",
                 }}
               />
-              {/* Optional: Add floating accent or overlay */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  left: "10px",
-                  width: "50px",
-                  height: "50px",
-                  background: "rgba(185,168,122,0.10)",
-                  borderRadius: "50%",
-                  zIndex: 1,
-                }}
-              ></div>
             </div>
           </div>
         </div>
       </div>
+      {/* Responsive styles to add margin on mobile */}
+      <style>
+        {`
+          @media (max-width: 575px) {
+            .home-image-container {
+              padding-left: 16px;
+              padding-right: 16px;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 };
