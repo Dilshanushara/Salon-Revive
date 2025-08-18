@@ -24,10 +24,10 @@ const Footer: React.FC = () => (
   <footer
     className="bg-dark text-light pt-5 pb-3 mt-auto"
     style={{
-      borderTop: "2px solid #b9a87a33",
+      borderTop: "1px solid rgba(185,168,122,0.35)",
       boxShadow: "0 -2px 16px rgba(185,168,122,0.10)",
       fontFamily: "Montserrat, sans-serif",
-      background: "linear-gradient(90deg, #222 70%, #b9a87a10 100%)",
+      background: "linear-gradient(90deg, #1c1c1c 70%, #b9a87a10 100%)",
     }}
   >
     <div className="container">

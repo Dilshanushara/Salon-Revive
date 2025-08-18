@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import image2 from "../../assets/images/image2.jpg";
 import image1 from "../../assets/images/image1.webp";
 import image3 from "../../assets/images/image3.jpg";
@@ -7,6 +7,17 @@ import homeImage from "../../assets/images/homeImage.jpeg";
 const heroImages = [image1, image2, image3, homeImage];
 
 const Home: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentImage = heroImages[currentIndex];
+
   return (
     <section
       id="home-section"
@@ -50,31 +61,13 @@ const Home: React.FC = () => {
             <div className="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-start gap-3">
               <a
                 href="#about-section"
-                className="btn btn-lg"
-                style={{
-                  background: "linear-gradient(90deg,#b9a87a 40%,#f3e9d2 100%)",
-                  color: "#222",
-                  fontWeight: 600,
-                  borderRadius: "2rem",
-                  border: "none",
-                  padding: "0.7rem 2.2rem",
-                  fontSize: "1.15rem",
-                  letterSpacing: "1px",
-                  boxShadow: "0 2px 10px rgba(185,168,122,0.18)",
-                }}
+                className="btn btn-lg btn-accent"
               >
                 About
               </a>
               <a
                 href="#services-section"
-                className="btn btn-outline-primary btn-lg px-4"
-                style={{
-                  borderRadius: "2rem",
-                  fontWeight: 600,
-                  fontSize: "1.15rem",
-                  borderColor: "#b9a87a",
-                  color: "#b9a87a",
-                }}
+                className="btn btn-outline-accent btn-lg px-4"
               >
                 Our Services
               </a>
@@ -95,9 +88,10 @@ const Home: React.FC = () => {
               }}
             >
               <img
-                src={homeImage}
-                alt="Salon interior"
-                className="img-fluid rounded shadow-lg"
+                key={currentIndex}
+                src={currentImage}
+                alt="Salon showcase"
+                className="img-fluid rounded shadow-lg fade-in"
                 style={{
                   maxHeight: 520,
                   objectFit: "cover",
@@ -105,7 +99,7 @@ const Home: React.FC = () => {
                   borderRadius: "1.5rem",
                   boxShadow: "0 8px 32px rgba(185,168,122,0.10)",
                   transition: "transform 0.5s cubic-bezier(.4,2,.3,1)",
-                  transform: "scale(1.07)",
+                  transform: "scale(1.05)",
                   background: "#fff",
                 }}
               />
