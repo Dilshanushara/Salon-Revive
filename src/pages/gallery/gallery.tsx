@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import image3 from "../../assets/images/image3.jpg";
 import image4 from "../../assets/images/image4.jpg";
 import image5 from "../../assets/images/image5.jpg";
@@ -10,7 +11,22 @@ const images = [image3, image4, image5, image6, image7, image8];
 
 const accentColor = "#b9a87a";
 
-const Gallery: React.FC = () => (
+const Gallery: React.FC = () => {
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const close = () => setLightboxIndex(null);
+  const showPrev = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (lightboxIndex === null) return;
+    setLightboxIndex((lightboxIndex + images.length - 1) % images.length);
+  };
+  const showNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (lightboxIndex === null) return;
+    setLightboxIndex((lightboxIndex + 1) % images.length);
+  };
+
+  return (
   <section
     id="gallery-section"
     style={{
@@ -62,6 +78,7 @@ const Gallery: React.FC = () => (
                 alignItems: "center",
                 justifyContent: "center",
               }}
+              onClick={() => setLightboxIndex(idx)}
             >
               <img
                 src={src}
@@ -88,8 +105,27 @@ const Gallery: React.FC = () => (
           </div>
         ))}
       </div>
+      <Modal show={lightboxIndex !== null} onHide={close} centered size="lg">
+        <Modal.Body className="bg-dark text-center" onClick={showNext} style={{ borderRadius: "1rem" }}>
+          {lightboxIndex !== null && (
+            <img src={images[lightboxIndex]} alt={`Selected ${lightboxIndex + 1}`} className="lightbox-img" />
+          )}
+          <div className="d-flex justify-content-between align-items-center mt-3">
+            <Button variant="outline-light" onClick={showPrev} className="d-flex align-items-center gap-2">
+              <i className="bi bi-chevron-left"></i> Prev
+            </Button>
+            <Button variant="outline-light" onClick={close} className="d-flex align-items-center gap-2">
+              <i className="bi bi-x-lg"></i> Close
+            </Button>
+            <Button variant="outline-light" onClick={showNext} className="d-flex align-items-center gap-2">
+              Next <i className="bi bi-chevron-right"></i>
+            </Button>
+          </div>
+        </Modal.Body>
+      </Modal>
     </div>
   </section>
-);
+  );
+};
 
 export default Gallery;

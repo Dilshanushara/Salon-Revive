@@ -16,9 +16,9 @@ const Header: React.FC<{ activeSection: string }> = ({ activeSection }) => (
     sticky="top"
     className="shadow-lg"
     style={{
-      backdropFilter: "blur(6px)",
-      backgroundColor: "rgba(33,37,41,0.85)",
-      borderBottom: "2px solid #b9a87a",
+      backdropFilter: "blur(8px)",
+      backgroundColor: "rgba(33,37,41,0.82)",
+      borderBottom: "1px solid rgba(185,168,122,0.45)",
     }}
   >
     <Container>
@@ -46,7 +46,7 @@ const Header: React.FC<{ activeSection: string }> = ({ activeSection }) => (
               style={{
                 fontWeight: 500,
                 fontSize: "1.1rem",
-                color: activeSection === item.id ? "#b9a87a" : "#fff",
+                color: activeSection === item.id ? "#b9a87a" : "#f1f1f1",
                 transition: "color 0.2s",
                 position: "relative",
               }}
