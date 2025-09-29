@@ -1,4 +1,5 @@
 import React from "react";
+import { theme, sectionStyle, containerStyle } from "../../styles/theme";
 
 const services = [
   { icon: "✂️", name: "Haircuts", desc: "Trendy styles for all ages." },
@@ -20,36 +21,23 @@ const services = [
   },
 ];
 
-const accentColor = "#b9a87a";
-
 const Services: React.FC = () => (
   <section
     id="services-section"
-    style={{
-      background: "linear-gradient(110deg, #f8f9fa 60%, #f3e9d2 100%)",
-      width: "100vw",
-      padding: "4rem 0 3.5rem 0",
-      overflow: "hidden",
-    }}
+    style={sectionStyle}
   >
     <div
       className="container-fluid"
-      style={{
-        maxWidth: "1250px",
-        margin: "0 auto",
-        borderRadius: "1.5rem",
-        background: "rgba(255,255,255,0.88)",
-        boxShadow: "0 8px 38px rgba(185,168,122,0.07)",
-        padding: "2.7rem 2.2rem",
-      }}
+      style={containerStyle}
     >
+      {/* Consistent heading style */}
       <div style={{ marginBottom: "2.2rem", textAlign: "center" }}>
         <h2
           style={{
-            color: accentColor,
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 700,
-            fontSize: "2.5rem",
+            color: theme.colors.primary,
+            fontFamily: theme.typography.fontFamily,
+            fontWeight: theme.typography.fontWeight.bold,
+            fontSize: theme.typography.fontSize.heading,
             letterSpacing: "1.2px",
             marginBottom: "0.3rem",
             position: "relative",
@@ -63,7 +51,7 @@ const Services: React.FC = () => (
             display: "block",
             height: "4px",
             width: "55px",
-            backgroundColor: accentColor,
+            backgroundColor: theme.colors.primary,
             borderRadius: "2px",
             margin: "6px auto 0",
           }}
@@ -71,9 +59,9 @@ const Services: React.FC = () => (
         <p
           className="mt-3"
           style={{
-            color: "#4d3a00",
+            color: theme.colors.text.secondary,
             fontSize: "1.1rem",
-            fontWeight: 500,
+            fontWeight: theme.typography.fontWeight.normal,
             maxWidth: "430px",
             margin: "0 auto",
           }}
@@ -82,13 +70,14 @@ const Services: React.FC = () => (
           to elevate your style and well-being.
         </p>
       </div>
+
       {/* Responsive grid for service cards */}
       <div
         className="services-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "2rem",
+          gap: theme.spacing.grid,
           marginTop: "0.5rem",
         }}
       >
@@ -97,12 +86,11 @@ const Services: React.FC = () => (
             <div
               className="card h-100 text-center w-100 service-card"
               style={{
-                borderRadius: "1.2rem",
+                borderRadius: theme.borderRadius.large,
                 border: "none",
-                background: "rgba(255,255,255,0.95)",
-                boxShadow: "0 6px 32px rgba(185,168,122,0.12)",
-                transition:
-                  "transform 0.22s cubic-bezier(.4,2,.3,1), box-shadow 0.2s",
+                background: theme.colors.background.white,
+                boxShadow: theme.shadows.medium,
+                transition: `all ${theme.transitions.medium}`,
                 position: "relative",
                 overflow: "hidden",
                 cursor: "pointer",
@@ -112,17 +100,17 @@ const Services: React.FC = () => (
                 justifyContent: "center",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.transform = "scale(1.04)";
-                e.currentTarget.style.boxShadow =
-                  "0 14px 40px rgba(185,168,122,0.20)";
+                const element = e.currentTarget as HTMLElement;
+                element.style.transform = "translateY(-8px)";
+                element.style.boxShadow = theme.shadows.hover;
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow =
-                  "0 6px 32px rgba(185,168,122,0.12)";
+                const element = e.currentTarget as HTMLElement;
+                element.style.transform = "translateY(0)";
+                element.style.boxShadow = theme.shadows.medium;
               }}
             >
-              {/* Accent shape */}
+              {/* Accent decoration */}
               <div
                 style={{
                   position: "absolute",
@@ -130,12 +118,13 @@ const Services: React.FC = () => (
                   right: "-16px",
                   width: "38px",
                   height: "38px",
-                  background: accentColor,
+                  background: theme.colors.primary,
                   opacity: 0.12,
-                  borderRadius: "50%",
+                  borderRadius: theme.borderRadius.circle,
                   zIndex: 1,
                 }}
               />
+              
               <div
                 className="card-body d-flex flex-column align-items-center justify-content-center py-4"
                 style={{ position: "relative", zIndex: 2 }}
@@ -144,36 +133,38 @@ const Services: React.FC = () => (
                   className="mb-2 service-icon"
                   style={{
                     fontSize: "2.3rem",
-                    color: accentColor,
+                    color: theme.colors.primary,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     background: "rgba(185,168,122,0.13)",
-                    borderRadius: "50%",
+                    borderRadius: theme.borderRadius.circle,
                     width: "3.2rem",
                     height: "3.2rem",
                   }}
                 >
                   {srv.icon}
                 </span>
+                
                 <h5
                   className="card-title service-title"
                   style={{
-                    fontWeight: 600,
+                    fontWeight: theme.typography.fontWeight.semibold,
                     fontSize: "1.13rem",
-                    color: "#222",
+                    color: theme.colors.text.primary,
                     marginBottom: "0.7rem",
-                    fontFamily: "Montserrat, sans-serif",
+                    fontFamily: theme.typography.fontFamily,
                   }}
                 >
                   {srv.name}
                 </h5>
+                
                 <p
                   className="card-text service-desc"
                   style={{
-                    color: "#7a6a2f",
+                    color: theme.colors.text.accent,
                     fontSize: "1.02rem",
-                    fontWeight: 500,
+                    fontWeight: theme.typography.fontWeight.normal,
                   }}
                 >
                   {srv.desc}
@@ -184,29 +175,33 @@ const Services: React.FC = () => (
         ))}
       </div>
     </div>
+    
     {/* Responsive styles */}
     <style>
       {`
         @media (max-width: 1100px) {
           #services-section .container-fluid {
-            padding: 2rem 0.7rem;
+            padding: ${theme.spacing.containerMobile} !important;
           }
           #services-section .services-grid {
             gap: 1.2rem;
           }
         }
-        @media (max-width: 900px) {
+        @media (max-width: ${theme.breakpoints.desktop}) {
           #services-section .services-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        @media (max-width: 650px) {
+        @media (max-width: ${theme.breakpoints.tablet}) {
+          #services-section {
+            padding: ${theme.spacing.sectionMobile} !important;
+          }
           #services-section .services-grid {
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: ${theme.spacing.gridMobile};
           }
           #services-section .card.service-card {
-            min-height: 155px;
+            min-height: 200px;
             font-size: 0.93rem;
             margin-bottom: 0.8rem;
             padding: 0.7rem 0.7rem;
@@ -215,9 +210,9 @@ const Services: React.FC = () => (
             padding: 1rem 0.3rem !important;
           }
           #services-section .service-icon {
-            font-size: 1.45rem !important;
-            width: 2.2rem !important;
-            height: 2.2rem !important;
+            font-size: 1.8rem !important;
+            width: 2.5rem !important;
+            height: 2.5rem !important;
           }
           #services-section .service-title {
             font-size: 1rem !important;
@@ -227,20 +222,23 @@ const Services: React.FC = () => (
             font-size: 0.92rem !important;
           }
           #services-section h2 {
-            font-size: 1.35rem !important;
+            font-size: 2rem !important;
           }
         }
-        @media (max-width: 440px) {
+        @media (max-width: ${theme.breakpoints.mobile}) {
           #services-section .container-fluid {
-            padding: 0.7rem 0.1rem;
+            padding: 1rem 0.5rem !important;
           }
           #services-section .card.service-card {
-            box-shadow: 0 2px 16px rgba(185,168,122,0.11);
-            min-height: 120px;
+            box-shadow: ${theme.shadows.light};
+            min-height: 160px;
             padding: 0.4rem 0.3rem;
           }
           #services-section .card-body {
             padding: 0.7rem 0.1rem !important;
+          }
+          #services-section h2 {
+            font-size: 1.5rem !important;
           }
         }
       `}
