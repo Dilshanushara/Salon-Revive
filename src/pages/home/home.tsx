@@ -113,13 +113,107 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* Responsive styles to add margin on mobile */}
+      {/* Enhanced responsive styles */}
       <style>
         {`
           @media (max-width: 575px) {
+            #home-section {
+              min-height: 70vh !important;
+              padding: 2rem 0 !important;
+            }
+            
+            #home-section .container {
+              padding: 1.5rem 0 !important;
+            }
+            
+            #home-section .display-3 {
+              font-size: 2.2rem !important;
+              line-height: 1.2 !important;
+              margin-bottom: 1.2rem !important;
+              letter-spacing: 1px !important;
+            }
+            
+            #home-section .lead {
+              font-size: 1.1rem !important;
+              margin-bottom: 1.5rem !important;
+              line-height: 1.4 !important;
+            }
+            
             .home-image-container {
               padding-left: 16px;
               padding-right: 16px;
+              margin-top: 2rem;
+              min-height: 300px !important;
+            }
+            
+            .home-image-container img {
+              max-height: 350px !important;
+              transform: scale(1) !important;
+            }
+            
+            #home-section .btn {
+              font-size: 1rem !important;
+              padding: 0.7rem 1.8rem !important;
+              width: 100%;
+              max-width: 280px;
+              margin: 0 auto 0.8rem auto;
+            }
+            
+            #home-section .gap-3 {
+              gap: 0.8rem !important;
+            }
+          }
+          
+          @media (min-width: 576px) and (max-width: 767px) {
+            #home-section {
+              min-height: 75vh !important;
+            }
+            
+            #home-section .display-3 {
+              font-size: 2.6rem !important;
+              line-height: 1.15 !important;
+            }
+            
+            #home-section .lead {
+              font-size: 1.25rem !important;
+            }
+            
+            .home-image-container {
+              margin-top: 1.5rem;
+              min-height: 380px !important;
+            }
+            
+            .home-image-container img {
+              max-height: 420px !important;
+            }
+          }
+          
+          @media (min-width: 768px) and (max-width: 991px) {
+            #home-section .display-3 {
+              font-size: 2.8rem !important;
+            }
+            
+            #home-section .lead {
+              font-size: 1.3rem !important;
+            }
+            
+            .home-image-container {
+              min-height: 400px !important;
+            }
+            
+            .home-image-container img {
+              max-height: 460px !important;
+            }
+            
+            #home-section .btn {
+              font-size: 1.1rem !important;
+              padding: 0.7rem 2rem !important;
+            }
+          }
+          
+          @media (min-width: 992px) and (max-width: 1199px) {
+            #home-section .display-3 {
+              font-size: 3rem !important;
             }
           }
         `}

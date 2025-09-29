@@ -184,63 +184,168 @@ const Services: React.FC = () => (
         ))}
       </div>
     </div>
-    {/* Responsive styles */}
+    {/* Enhanced responsive styles */}
     <style>
       {`
-        @media (max-width: 1100px) {
+        @media (max-width: 1199px) {
           #services-section .container-fluid {
-            padding: 2rem 0.7rem;
+            padding: 2.2rem 1rem;
           }
           #services-section .services-grid {
-            gap: 1.2rem;
+            gap: 1.5rem;
           }
         }
-        @media (max-width: 900px) {
+        
+        @media (max-width: 991px) {
+          #services-section {
+            padding: 3.5rem 0 3rem 0 !important;
+          }
+          
+          #services-section .container-fluid {
+            padding: 2rem 0.8rem;
+          }
+          
           #services-section .services-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 1.3rem;
+          }
+          
+          #services-section h2 {
+            font-size: 2.2rem !important;
+          }
+          
+          #services-section .card.service-card {
+            min-height: 180px;
+            padding: 1rem;
           }
         }
-        @media (max-width: 650px) {
+        
+        @media (max-width: 767px) {
+          #services-section {
+            padding: 3rem 0 2.5rem 0 !important;
+          }
+          
+          #services-section .container-fluid {
+            padding: 1.8rem 0.6rem;
+          }
+          
           #services-section .services-grid {
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 1.2rem;
           }
+          
+          #services-section h2 {
+            font-size: 2rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          
           #services-section .card.service-card {
-            min-height: 155px;
-            font-size: 0.93rem;
-            margin-bottom: 0.8rem;
-            padding: 0.7rem 0.7rem;
+            min-height: 160px;
+            padding: 1rem 0.8rem;
+            margin-bottom: 0;
           }
+          
           #services-section .card-body {
-            padding: 1rem 0.3rem !important;
+            padding: 1rem 0.5rem !important;
           }
+          
           #services-section .service-icon {
-            font-size: 1.45rem !important;
+            font-size: 1.6rem !important;
+            width: 2.5rem !important;
+            height: 2.5rem !important;
+          }
+          
+          #services-section .service-title {
+            font-size: 1.05rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          
+          #services-section .service-desc {
+            font-size: 0.98rem !important;
+            line-height: 1.4 !important;
+          }
+        }
+        
+        @media (max-width: 575px) {
+          #services-section {
+            padding: 2.5rem 0 2rem 0 !important;
+          }
+          
+          #services-section .container-fluid {
+            padding: 1.5rem 0.5rem;
+          }
+          
+          #services-section h2 {
+            font-size: 1.8rem !important;
+            letter-spacing: 1px !important;
+          }
+          
+          #services-section p {
+            font-size: 1rem !important;
+            max-width: 100% !important;
+          }
+          
+          #services-section .services-grid {
+            gap: 1rem;
+            margin-top: 1rem !important;
+          }
+          
+          #services-section .card.service-card {
+            min-height: 140px;
+            padding: 0.8rem 0.6rem;
+            font-size: 0.9rem;
+          }
+          
+          #services-section .card-body {
+            padding: 0.8rem 0.3rem !important;
+          }
+          
+          #services-section .service-icon {
+            font-size: 1.4rem !important;
             width: 2.2rem !important;
             height: 2.2rem !important;
           }
+          
           #services-section .service-title {
             font-size: 1rem !important;
             margin-bottom: 0.4rem !important;
           }
+          
           #services-section .service-desc {
-            font-size: 0.92rem !important;
-          }
-          #services-section h2 {
-            font-size: 1.35rem !important;
+            font-size: 0.9rem !important;
           }
         }
-        @media (max-width: 440px) {
+        
+        @media (max-width: 480px) {
           #services-section .container-fluid {
-            padding: 0.7rem 0.1rem;
+            padding: 1.2rem 0.3rem;
           }
+          
+          #services-section h2 {
+            font-size: 1.6rem !important;
+          }
+          
           #services-section .card.service-card {
-            box-shadow: 0 2px 16px rgba(185,168,122,0.11);
-            min-height: 120px;
-            padding: 0.4rem 0.3rem;
+            min-height: 130px;
+            padding: 0.6rem 0.4rem;
           }
+          
           #services-section .card-body {
-            padding: 0.7rem 0.1rem !important;
+            padding: 0.6rem 0.2rem !important;
+          }
+          
+          #services-section .service-icon {
+            font-size: 1.3rem !important;
+            width: 2rem !important;
+            height: 2rem !important;
+          }
+          
+          #services-section .service-title {
+            font-size: 0.95rem !important;
+          }
+          
+          #services-section .service-desc {
+            font-size: 0.85rem !important;
           }
         }
       `}

@@ -159,15 +159,112 @@ const About: React.FC = () => (
         </div>
       </div>
     </div>
-    {/* Reduce top/bottom padding on mobile for less space between sections */}
+    {/* Enhanced responsive styles */}
     <style>
       {`
         @media (max-width: 575px) {
           #about-section {
-            padding: 1.4rem 0 1.2rem 0 !important;
+            padding: 2rem 0 1.5rem 0 !important;
           }
+          
           #about-section .container-fluid {
-            padding: 1.1rem 0.3rem !important;
+            padding: 1.5rem 0.8rem !important;
+          }
+          
+          #about-section h2 {
+            font-size: 2rem !important;
+            margin-bottom: 1rem !important;
+          }
+          
+          #about-section .row {
+            flex-direction: column-reverse !important;
+          }
+          
+          #about-section .col-lg-6:first-child {
+            margin-bottom: 0 !important;
+            margin-top: 1.5rem !important;
+          }
+          
+          #about-section p {
+            font-size: 1rem !important;
+            margin-bottom: 1rem !important;
+            line-height: 1.5 !important;
+          }
+          
+          #about-section .list-unstyled {
+            font-size: 1rem !important;
+            grid-template-columns: 1fr !important;
+            gap: 0.8rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+          
+          #about-section .list-unstyled li {
+            padding: 0.8rem !important;
+            border-radius: 0.8rem !important;
+          }
+          
+          #about-section .list-unstyled li > div:first-child {
+            font-size: 1.5rem !important;
+            width: 2.5rem !important;
+            height: 2.5rem !important;
+            margin-right: 0.8rem !important;
+          }
+        }
+        
+        @media (min-width: 576px) and (max-width: 767px) {
+          #about-section {
+            padding: 2.5rem 0 2rem 0 !important;
+          }
+          
+          #about-section .container-fluid {
+            padding: 2rem 1rem !important;
+          }
+          
+          #about-section h2 {
+            font-size: 2.3rem !important;
+          }
+          
+          #about-section .row {
+            flex-direction: column-reverse !important;
+          }
+          
+          #about-section .col-lg-6:first-child {
+            margin-top: 2rem !important;
+            margin-bottom: 0 !important;
+          }
+          
+          #about-section .list-unstyled {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1rem !important;
+          }
+          
+          #about-section p {
+            font-size: 1.1rem !important;
+          }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+          #about-section {
+            padding: 3rem 0 2.5rem 0 !important;
+          }
+          
+          #about-section .container-fluid {
+            padding: 2.2rem 1.2rem !important;
+          }
+          
+          #about-section h2 {
+            font-size: 2.5rem !important;
+          }
+          
+          #about-section .list-unstyled {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.2rem !important;
+          }
+        }
+        
+        @media (min-width: 992px) and (max-width: 1199px) {
+          #about-section .container-fluid {
+            padding: 2.5rem 1.5rem !important;
           }
         }
       `}
