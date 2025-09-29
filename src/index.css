@@ -1,3 +1,84 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Global responsive enhancements */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure touch-friendly interface */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button, 
+  .btn, 
+  a[role="button"], 
+  input[type="button"], 
+  input[type="submit"], 
+  input[type="reset"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve form inputs on mobile */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Better spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .container-fluid {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+}
+
+/* Typography scaling */
+@media (max-width: 575px) {
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.6rem !important; }
+  h3 { font-size: 1.4rem !important; }
+  h4 { font-size: 1.2rem !important; }
+  h5 { font-size: 1.1rem !important; }
+  h6 { font-size: 1rem !important; }
+}
+
+/* Smooth transitions for responsive elements */
+.img-fluid,
+.btn,
+.card {
+  transition: all 0.3s ease;
+}
+
+/* Prevent horizontal scroll on small screens */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col,
+[class*="col-"] {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* Mobile-first navigation improvements */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(33, 37, 41, 0.95);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+}
