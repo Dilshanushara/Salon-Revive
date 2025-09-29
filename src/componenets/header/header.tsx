@@ -5,7 +5,9 @@ const navItems = [
   { id: "home-section", label: "Home" },
   { id: "about-section", label: "About" },
   { id: "services-section", label: "Services" },
+  { id: "testimonials-section", label: "Reviews" },
   { id: "gallery-section", label: "Gallery" },
+  { id: "contact-section", label: "Contact" },
 ];
 
 const Header: React.FC<{ activeSection: string }> = ({ activeSection }) => (
