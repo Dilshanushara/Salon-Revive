@@ -1,4 +1,5 @@
 import React from "react";
+import { theme, sectionStyle, containerStyle } from "../../styles/theme";
 import homeImage2 from "../../assets/images/homeImage2.jpeg";
 import aboutImage from "../../assets/images/aboutImage.jpeg";
 
@@ -9,37 +10,23 @@ const features = [
   { icon: "🧖‍♀️", text: "Personalized service every visit" },
 ];
 
-const accentColor = "#b9a87a";
-
 const About: React.FC = () => (
   <section
     id="about-section"
-    style={{
-      background: "linear-gradient(120deg, #f8f9fa 60%, #f3e9d2 100%)",
-      width: "100vw",
-      padding: "4.5rem 0 4rem 0",
-      overflow: "hidden",
-    }}
+    style={sectionStyle}
   >
     <div
       className="container-fluid"
-      style={{
-        maxWidth: "1250px",
-        margin: "0 auto",
-        borderRadius: "1.5rem",
-        background: "rgba(255,255,255,0.88)",
-        boxShadow: "0 8px 38px rgba(185,168,122,0.07)",
-        padding: "2.7rem 2.2rem",
-      }}
+      style={containerStyle}
     >
-      {/* Heading */}
+      {/* Consistent heading style */}
       <div style={{ marginBottom: "2.2rem" }}>
         <h2
           style={{
-            color: accentColor,
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 700,
-            fontSize: "2.5rem",
+            color: theme.colors.primary,
+            fontFamily: theme.typography.fontFamily,
+            fontWeight: theme.typography.fontWeight.bold,
+            fontSize: theme.typography.fontSize.heading,
             letterSpacing: "1.2px",
             marginBottom: "0.3rem",
             position: "relative",
@@ -53,12 +40,13 @@ const About: React.FC = () => (
             display: "block",
             height: "4px",
             width: "55px",
-            backgroundColor: accentColor,
+            backgroundColor: theme.colors.primary,
             borderRadius: "2px",
             margin: "6px 0 0",
           }}
         />
       </div>
+
       <div className="row align-items-center gy-4 gx-5">
         {/* Image */}
         <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
@@ -67,9 +55,9 @@ const About: React.FC = () => (
               position: "relative",
               width: "100%",
               maxWidth: "530px",
-              borderRadius: "1.5rem",
+              borderRadius: theme.borderRadius.large,
               overflow: "hidden",
-              boxShadow: "0 2px 28px rgba(185,168,122,0.18)",
+              boxShadow: theme.shadows.heavy,
             }}
           >
             <img
@@ -77,15 +65,15 @@ const About: React.FC = () => (
               alt="Smiling salon team"
               className="img-fluid"
               style={{
-                borderRadius: "1.5rem",
+                borderRadius: theme.borderRadius.large,
                 width: "100%",
                 height: "410px",
                 objectFit: "cover",
-                transition: "transform .5s cubic-bezier(.4,2,.3,1)",
-                transform: "scale(1.07)",
+                transition: `transform ${theme.transitions.slow}`,
+                transform: "scale(1.02)",
               }}
             />
-            {/* Accent Small Square */}
+            {/* Accent decoration */}
             <div
               style={{
                 position: "absolute",
@@ -93,28 +81,30 @@ const About: React.FC = () => (
                 right: "24px",
                 width: "32px",
                 height: "32px",
-                background: accentColor,
-                borderRadius: "0.7rem",
-                opacity: 0.12,
+                background: theme.colors.primary,
+                borderRadius: theme.borderRadius.small,
+                opacity: 0.15,
                 zIndex: 2,
               }}
             />
           </div>
         </div>
+
         {/* Content */}
         <div className="col-lg-6 text-lg-start text-center">
           <p
             style={{
-              fontWeight: 600,
-              color: "#4d3a00",
+              fontWeight: theme.typography.fontWeight.semibold,
+              color: theme.colors.text.secondary,
               fontSize: "1.22rem",
               marginBottom: "1.35rem",
-              fontFamily: "Montserrat, sans-serif",
+              fontFamily: theme.typography.fontFamily,
             }}
           >
             Welcome to Salon Revive! Our close-knit team is passionate about
             making you feel your best, inside and out.
           </p>
+          
           <ul
             className="list-unstyled mb-4"
             style={{
@@ -132,12 +122,20 @@ const About: React.FC = () => (
                 className="d-flex align-items-center"
                 style={{
                   gap: "0.9rem",
-                  background: "#f8f9fa",
-                  borderRadius: "1rem",
+                  background: theme.colors.background.main,
+                  borderRadius: theme.borderRadius.medium,
                   padding: "0.75rem 1.1rem",
-                  boxShadow: "0 2px 12px rgba(185,168,122,0.05)",
-                  fontWeight: 500,
-                  transition: "background .2s",
+                  boxShadow: theme.shadows.light,
+                  fontWeight: theme.typography.fontWeight.normal,
+                  transition: `all ${theme.transitions.fast}`,
+                }}
+                onMouseOver={(e) => {
+                  (e.currentTarget as HTMLElement).style.transform = "translateX(8px)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = theme.shadows.medium;
+                }}
+                onMouseOut={(e) => {
+                  (e.currentTarget as HTMLElement).style.transform = "translateX(0)";
+                  (e.currentTarget as HTMLElement).style.boxShadow = theme.shadows.light;
                 }}
               >
                 <span style={{ fontSize: "1.65rem" }}>{f.icon}</span>
@@ -145,11 +143,12 @@ const About: React.FC = () => (
               </li>
             ))}
           </ul>
+          
           <p
             style={{
-              color: "#6c757d",
-              fontSize: "1.07rem",
-              fontWeight: 500,
+              color: theme.colors.text.muted,
+              fontSize: theme.typography.fontSize.body,
+              fontWeight: theme.typography.fontWeight.normal,
             }}
           >
             With years of expertise and a focus on your satisfaction, we make
@@ -159,15 +158,16 @@ const About: React.FC = () => (
         </div>
       </div>
     </div>
-    {/* Reduce top/bottom padding on mobile for less space between sections */}
+    
+    {/* Responsive styles */}
     <style>
       {`
-        @media (max-width: 575px) {
+        @media (max-width: ${theme.breakpoints.tablet}) {
           #about-section {
-            padding: 1.4rem 0 1.2rem 0 !important;
+            padding: ${theme.spacing.sectionMobile} !important;
           }
           #about-section .container-fluid {
-            padding: 1.1rem 0.3rem !important;
+            padding: ${theme.spacing.containerMobile} !important;
           }
         }
       `}
