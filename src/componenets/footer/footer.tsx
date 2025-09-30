@@ -22,116 +22,177 @@ const accentColor = "#b9a87a";
 
 const Footer: React.FC = () => (
   <footer
-    className="bg-dark text-light pt-5 pb-3 mt-auto"
+    className="text-light pt-5 pb-4 mt-auto"
     style={{
-      borderTop: "2px solid #b9a87a33",
-      boxShadow: "0 -2px 16px rgba(185,168,122,0.10)",
-      fontFamily: "Montserrat, sans-serif",
-      background: "linear-gradient(90deg, #222 70%, #b9a87a10 100%)",
+      background: "#2c2416",
+      borderTop: "1px solid rgba(185,168,122,0.2)",
     }}
   >
-    <div className="container">
-      <div className="row gy-4 justify-content-between align-items-center">
+    <div className="container" style={{ maxWidth: "1200px" }}>
+      <div className="row gy-4 justify-content-between">
         {/* Brand & Contact Info */}
-        <div className="col-12 col-md-6 text-center text-md-start">
+        <div className="col-12 col-md-6">
           <h5
             style={{
-              color: accentColor,
+              color: "#f5efe3",
               fontWeight: 700,
-              fontSize: "1.25rem",
-              letterSpacing: "1px",
-              marginBottom: "0.5rem",
+              fontSize: "1.5rem",
+              letterSpacing: "0.5px",
+              marginBottom: "1.2rem",
+              fontFamily: "'Playfair Display', Georgia, serif",
             }}
           >
+            <i
+              className="bi bi-scissors me-2"
+              style={{ color: accentColor }}
+            ></i>
             Salon Revive
           </h5>
           <p
-            className="mb-1"
+            className="mb-3"
             style={{
-              fontSize: "1.07rem",
-              color: "#e5e1d6",
-              fontWeight: 500,
-              lineHeight: 1.5,
+              fontSize: "0.95rem",
+              color: "#c4b8a8",
+              fontWeight: 400,
+              lineHeight: 1.7,
+              maxWidth: "350px",
             }}
           >
-            <i
-              className="bi bi-geo-alt-fill"
-              style={{ color: accentColor, marginRight: 6 }}
-            />
-            No 558 2nd Floor Galle Road Pamburana Matara, Sri Lanka
+            Where beauty meets artistry. Experience the finest salon services in
+            a luxurious, tranquil environment.
           </p>
-          <p
-            className="mb-1"
-            style={{
-              fontSize: "1.07rem",
-              color: "#e5e1d6",
-              fontWeight: 500,
-              lineHeight: 1.5,
-            }}
-          >
+          <div className="mb-2">
             <i
-              className="bi bi-envelope-fill"
-              style={{ color: accentColor, marginRight: 6 }}
+              className="bi bi-geo-alt-fill me-2"
+              style={{ color: accentColor }}
+            />
+            <span
+              style={{
+                fontSize: "0.9rem",
+                color: "#c4b8a8",
+                fontWeight: 400,
+              }}
+            >
+              No 558 2nd Floor Galle Road Pamburana Matara, Sri Lanka
+            </span>
+          </div>
+          <div className="mb-2">
+            <i
+              className="bi bi-envelope-fill me-2"
+              style={{ color: accentColor }}
             />
             <a
               href="mailto:salonrevive@gmail.com"
               className="text-decoration-none"
               style={{
-                color: accentColor,
-                fontWeight: 600,
-                letterSpacing: "1px",
+                color: "#c4b8a8",
+                fontWeight: 400,
+                fontSize: "0.9rem",
+                transition: "color 0.3s ease",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.color = accentColor;
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.color = "#c4b8a8";
               }}
             >
               salonrevive@gmail.com
             </a>
-          </p>
-          <p
-            className="mb-0"
-            style={{
-              fontSize: "0.98rem",
-              color: "#a8a8a8",
-              marginTop: "0.4rem",
-            }}
-          >
-            &copy; {new Date().getFullYear()} Salon Revive. All rights reserved.
-          </p>
-        </div>
-        {/* Social Icons */}
-        <div className="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center gap-3">
-          {socialLinks.map((link) => (
+          </div>
+          <div>
+            <i
+              className="bi bi-telephone-fill me-2"
+              style={{ color: accentColor }}
+            />
             <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-              className="text-light footer-social-icon"
+              href="tel:+94704840024"
+              className="text-decoration-none"
               style={{
-                fontSize: "2rem",
-                background: "rgba(185,168,122,0.10)",
-                padding: "0.5rem",
-                borderRadius: "1.2rem",
-                transition: "background 0.18s, color 0.18s, transform 0.2s",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 2px 8px rgba(185,168,122,0.10)",
+                color: "#c4b8a8",
+                fontWeight: 400,
+                fontSize: "0.9rem",
+                transition: "color 0.3s ease",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.background = accentColor;
-                e.currentTarget.style.color = "#222";
-                e.currentTarget.style.transform = "scale(1.12)";
+                e.currentTarget.style.color = accentColor;
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.background = "rgba(185,168,122,0.10)";
-                e.currentTarget.style.color = "";
-                e.currentTarget.style.transform = "scale(1)";
+                e.currentTarget.style.color = "#c4b8a8";
               }}
             >
-              <i className={link.iconClass}></i>
+              +94 70 484 0024
             </a>
-          ))}
+          </div>
         </div>
+        {/* Social Icons */}
+        <div className="col-12 col-md-6 d-flex flex-column align-items-md-end">
+          <h6
+            style={{
+              color: "#f5efe3",
+              fontWeight: 600,
+              fontSize: "1rem",
+              marginBottom: "1rem",
+              letterSpacing: "0.5px",
+            }}
+          >
+            Follow Us
+          </h6>
+          <div className="d-flex gap-3 mb-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="text-light footer-social-icon"
+                style={{
+                  fontSize: "1.3rem",
+                  background: "rgba(185,168,122,0.15)",
+                  padding: "0.6rem",
+                  borderRadius: "0.4rem",
+                  transition: "all 0.3s ease",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "40px",
+                  height: "40px",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.background = accentColor;
+                  e.currentTarget.style.color = "#2c2416";
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.background = "rgba(185,168,122,0.15)";
+                  e.currentTarget.style.color = "";
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                <i className={link.iconClass}></i>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <hr
+        style={{
+          borderTop: "1px solid rgba(185,168,122,0.2)",
+          margin: "2rem 0 1.5rem 0",
+        }}
+      />
+      <div className="text-center">
+        <p
+          className="mb-0"
+          style={{
+            fontSize: "0.85rem",
+            color: "#8b7d6f",
+            fontWeight: 400,
+          }}
+        >
+          &copy; {new Date().getFullYear()} Salon Revive. All rights reserved.
+        </p>
       </div>
     </div>
   </footer>

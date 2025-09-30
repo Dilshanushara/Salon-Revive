@@ -3,10 +3,10 @@ import homeImage2 from "../../assets/images/homeImage2.jpeg";
 import aboutImage from "../../assets/images/aboutImage.jpeg";
 
 const features = [
-  { icon: "👩‍🎨", text: "Friendly, experienced professionals" },
-  { icon: "🏡", text: "Relaxing, welcoming atmosphere" },
-  { icon: "💎", text: "High-quality products & modern techniques" },
-  { icon: "🧖‍♀️", text: "Personalized service every visit" },
+  { icon: "✓", text: "Expert stylists with 10+ years experience" },
+  { icon: "✓", text: "Luxurious, tranquil environment" },
+  { icon: "✓", text: "Premium organic products" },
+  { icon: "✓", text: "Personalized consultations" },
 ];
 
 const accentColor = "#b9a87a";
@@ -15,146 +15,139 @@ const About: React.FC = () => (
   <section
     id="about-section"
     style={{
-      background: "linear-gradient(120deg, #f8f9fa 60%, #f3e9d2 100%)",
+      background: "#ffffff",
       width: "100vw",
-      padding: "4.5rem 0 4rem 0",
+      padding: "6rem 0 5rem 0",
       overflow: "hidden",
     }}
   >
-    <div
-      className="container-fluid"
-      style={{
-        maxWidth: "1250px",
-        margin: "0 auto",
-        borderRadius: "1.5rem",
-        background: "rgba(255,255,255,0.88)",
-        boxShadow: "0 8px 38px rgba(185,168,122,0.07)",
-        padding: "2.7rem 2.2rem",
-      }}
-    >
-      {/* Heading */}
-      <div style={{ marginBottom: "2.2rem" }}>
-        <h2
-          style={{
-            color: accentColor,
-            fontFamily: "Montserrat, sans-serif",
-            fontWeight: 700,
-            fontSize: "2.5rem",
-            letterSpacing: "1.2px",
-            marginBottom: "0.3rem",
-            position: "relative",
-            display: "inline-block",
-          }}
-        >
-          About Us
-        </h2>
-        <span
-          style={{
-            display: "block",
-            height: "4px",
-            width: "55px",
-            backgroundColor: accentColor,
-            borderRadius: "2px",
-            margin: "6px 0 0",
-          }}
-        />
-      </div>
-      <div className="row align-items-center gy-4 gx-5">
+    <div className="container" style={{ maxWidth: "1200px" }}>
+      <div className="row align-items-center gy-5 gx-5">
         {/* Image */}
-        <div className="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
+        <div className="col-lg-6 mb-4 mb-lg-0">
           <div
             style={{
               position: "relative",
               width: "100%",
-              maxWidth: "530px",
-              borderRadius: "1.5rem",
-              overflow: "hidden",
-              boxShadow: "0 2px 28px rgba(185,168,122,0.18)",
             }}
           >
-            <img
-              src={aboutImage}
-              alt="Smiling salon team"
-              className="img-fluid"
-              style={{
-                borderRadius: "1.5rem",
-                width: "100%",
-                height: "410px",
-                objectFit: "cover",
-                transition: "transform .5s cubic-bezier(.4,2,.3,1)",
-                transform: "scale(1.07)",
-              }}
-            />
-            {/* Accent Small Square */}
             <div
               style={{
                 position: "absolute",
-                bottom: "18px",
-                right: "24px",
-                width: "32px",
-                height: "32px",
-                background: accentColor,
-                borderRadius: "0.7rem",
-                opacity: 0.12,
-                zIndex: 2,
+                top: "-20px",
+                left: "-20px",
+                width: "100%",
+                height: "100%",
+                background: "linear-gradient(135deg, #b9a87a 0%, #d4c4a0 100%)",
+                borderRadius: "0.5rem",
+                opacity: 0.15,
+                zIndex: 0,
+              }}
+            />
+            <img
+              src={aboutImage}
+              alt="Professional salon team"
+              className="img-fluid"
+              style={{
+                borderRadius: "0.5rem",
+                width: "100%",
+                height: "500px",
+                objectFit: "cover",
+                boxShadow: "0 20px 60px rgba(44,36,22,0.15)",
+                position: "relative",
+                zIndex: 1,
               }}
             />
           </div>
         </div>
         {/* Content */}
-        <div className="col-lg-6 text-lg-start text-center">
-          <p
+        <div className="col-lg-6">
+          <div
             style={{
+              display: "inline-block",
+              padding: "0.4rem 1.2rem",
+              background: "rgba(185,168,122,0.12)",
+              borderRadius: "2rem",
+              marginBottom: "1rem",
+              fontSize: "0.85rem",
               fontWeight: 600,
-              color: "#4d3a00",
-              fontSize: "1.22rem",
-              marginBottom: "1.35rem",
-              fontFamily: "Montserrat, sans-serif",
+              color: "#8b7355",
+              letterSpacing: "1.5px",
+              textTransform: "uppercase",
             }}
           >
-            Welcome to Salon Revive! Our close-knit team is passionate about
-            making you feel your best, inside and out.
+            Our Story
+          </div>
+          <h2
+            style={{
+              color: "#2c2416",
+              fontFamily: "'Playfair Display', Georgia, serif",
+              fontWeight: 700,
+              fontSize: "2.8rem",
+              letterSpacing: "0.5px",
+              marginBottom: "1.5rem",
+              lineHeight: "1.2",
+            }}
+          >
+            Where Beauty
+            <br />
+            Meets Excellence
+          </h2>
+          <p
+            style={{
+              color: "#6b5d4f",
+              fontSize: "1.1rem",
+              marginBottom: "2rem",
+              lineHeight: "1.8",
+              fontWeight: 400,
+            }}
+          >
+            At Salon Revive, we believe beauty is an art. Our team of skilled
+            professionals is dedicated to creating stunning looks that enhance
+            your natural beauty and boost your confidence.
           </p>
           <ul
             className="list-unstyled mb-4"
             style={{
-              fontSize: "1.14rem",
+              fontSize: "1.05rem",
               marginLeft: 0,
-              marginBottom: "2.1rem",
-              display: "grid",
-              gridTemplateColumns: "1fr",
-              gap: "0.7rem",
+              marginBottom: "2rem",
             }}
           >
             {features.map((f, i) => (
               <li
                 key={i}
-                className="d-flex align-items-center"
+                className="d-flex align-items-center mb-3"
                 style={{
-                  gap: "0.9rem",
-                  background: "#f8f9fa",
-                  borderRadius: "1rem",
-                  padding: "0.75rem 1.1rem",
-                  boxShadow: "0 2px 12px rgba(185,168,122,0.05)",
+                  gap: "1rem",
+                  color: "#2c2416",
                   fontWeight: 500,
-                  transition: "background .2s",
                 }}
               >
-                <span style={{ fontSize: "1.65rem" }}>{f.icon}</span>
+                <span
+                  style={{
+                    fontSize: "1.2rem",
+                    color: "#b9a87a",
+                    fontWeight: 700,
+                  }}
+                >
+                  {f.icon}
+                </span>
                 <span>{f.text}</span>
               </li>
             ))}
           </ul>
           <p
             style={{
-              color: "#6c757d",
-              fontSize: "1.07rem",
-              fontWeight: 500,
+              color: "#6b5d4f",
+              fontSize: "1.05rem",
+              fontWeight: 400,
+              lineHeight: "1.8",
+              fontStyle: "italic",
             }}
           >
-            With years of expertise and a focus on your satisfaction, we make
-            every visit special. Whether you're seeking a fresh look or a moment
-            to unwind, Salon Revive is here for you.
+            "Every visit is an opportunity to create magic. We're committed to
+            delivering exceptional service that exceeds your expectations."
           </p>
         </div>
       </div>
@@ -164,10 +157,7 @@ const About: React.FC = () => (
       {`
         @media (max-width: 575px) {
           #about-section {
-            padding: 1.4rem 0 1.2rem 0 !important;
-          }
-          #about-section .container-fluid {
-            padding: 1.1rem 0.3rem !important;
+            padding: 3rem 0 2rem 0 !important;
           }
         }
       `}

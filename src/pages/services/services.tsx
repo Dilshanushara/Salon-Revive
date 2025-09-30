@@ -1,22 +1,35 @@
 import React from "react";
 
 const services = [
-  { icon: "✂️", name: "Haircuts", desc: "Trendy styles for all ages." },
-  { icon: "🎨", name: "Hair Coloring", desc: "Vibrant and lasting colors." },
+  {
+    icon: "✂️",
+    name: "Haircut & Styling",
+    desc: "Expert cuts and styling for all hair types, creating looks that complement your features.",
+  },
+  {
+    icon: "🎨",
+    name: "Color Services",
+    desc: "From subtle highlights to bold transformations using premium color products.",
+  },
   {
     icon: "🧖‍♀️",
-    name: "Facials",
-    desc: "Rejuvenate your skin with our premium facial treatments.",
+    name: "Facial Treatments",
+    desc: "Customized skincare treatments to cleanse, exfoliate, and rejuvenate your skin.",
   },
   {
     icon: "💅",
-    name: "Manicure & Pedicure",
-    desc: "Pamper your hands and feet.",
+    name: "Nail Care",
+    desc: "Manicures and pedicures with attention to detail and long-lasting results.",
+  },
+  {
+    icon: "💆‍♀️",
+    name: "Hair Treatments",
+    desc: "Deep conditioning and repair treatments for healthy, lustrous hair.",
   },
   {
     icon: "👰‍♀️",
-    name: "Bridal Packages",
-    desc: "Special packages for your big day.",
+    name: "Bridal Services",
+    desc: "Complete bridal packages for your special day, including hair, makeup, and more.",
   },
 ];
 
@@ -26,60 +39,56 @@ const Services: React.FC = () => (
   <section
     id="services-section"
     style={{
-      background: "linear-gradient(110deg, #f8f9fa 60%, #f3e9d2 100%)",
+      background: "linear-gradient(135deg, #fdfbf7 0%, #f5efe3 100%)",
       width: "100vw",
-      padding: "4rem 0 3.5rem 0",
+      padding: "6rem 0 5rem 0",
       overflow: "hidden",
     }}
   >
-    <div
-      className="container-fluid"
-      style={{
-        maxWidth: "1250px",
-        margin: "0 auto",
-        borderRadius: "1.5rem",
-        background: "rgba(255,255,255,0.88)",
-        boxShadow: "0 8px 38px rgba(185,168,122,0.07)",
-        padding: "2.7rem 2.2rem",
-      }}
-    >
-      <div style={{ marginBottom: "2.2rem", textAlign: "center" }}>
+    <div className="container" style={{ maxWidth: "1200px" }}>
+      <div style={{ marginBottom: "3.5rem", textAlign: "center" }}>
+        <div
+          style={{
+            display: "inline-block",
+            padding: "0.4rem 1.2rem",
+            background: "rgba(185,168,122,0.12)",
+            borderRadius: "2rem",
+            marginBottom: "1rem",
+            fontSize: "0.85rem",
+            fontWeight: 600,
+            color: "#8b7355",
+            letterSpacing: "1.5px",
+            textTransform: "uppercase",
+          }}
+        >
+          What We Offer
+        </div>
         <h2
           style={{
-            color: accentColor,
-            fontFamily: "Montserrat, sans-serif",
+            color: "#2c2416",
+            fontFamily: "'Playfair Display', Georgia, serif",
             fontWeight: 700,
-            fontSize: "2.5rem",
-            letterSpacing: "1.2px",
-            marginBottom: "0.3rem",
-            position: "relative",
-            display: "inline-block",
+            fontSize: "2.8rem",
+            letterSpacing: "0.5px",
+            marginBottom: "1rem",
+            lineHeight: "1.2",
           }}
         >
           Our Services
         </h2>
-        <span
-          style={{
-            display: "block",
-            height: "4px",
-            width: "55px",
-            backgroundColor: accentColor,
-            borderRadius: "2px",
-            margin: "6px auto 0",
-          }}
-        />
         <p
-          className="mt-3"
+          className="mt-2"
           style={{
-            color: "#4d3a00",
+            color: "#6b5d4f",
             fontSize: "1.1rem",
-            fontWeight: 500,
-            maxWidth: "430px",
+            fontWeight: 400,
+            maxWidth: "600px",
             margin: "0 auto",
+            lineHeight: "1.7",
           }}
         >
-          Discover our range of premium beauty and grooming services, tailored
-          to elevate your style and well-being.
+          Indulge in our comprehensive range of beauty services, each designed
+          to enhance your natural elegance.
         </p>
       </div>
       {/* Responsive grid for service cards */}
@@ -93,93 +102,62 @@ const Services: React.FC = () => (
         }}
       >
         {services.map((srv, idx) => (
-          <div key={idx} style={{ display: "flex" }}>
+          <div
+            key={idx}
+            className="service-card"
+            style={{
+              background: "#ffffff",
+              borderRadius: "0.5rem",
+              border: "1px solid rgba(185,168,122,0.15)",
+              padding: "2.5rem 2rem",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
+              position: "relative",
+              overflow: "hidden",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.boxShadow =
+                "0 20px 40px rgba(44,36,22,0.12)";
+              e.currentTarget.style.borderColor = "rgba(185,168,122,0.3)";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
+              e.currentTarget.style.borderColor = "rgba(185,168,122,0.15)";
+            }}
+          >
             <div
-              className="card h-100 text-center w-100 service-card"
               style={{
-                borderRadius: "1.2rem",
-                border: "none",
-                background: "rgba(255,255,255,0.95)",
-                boxShadow: "0 6px 32px rgba(185,168,122,0.12)",
-                transition:
-                  "transform 0.22s cubic-bezier(.4,2,.3,1), box-shadow 0.2s",
-                position: "relative",
-                overflow: "hidden",
-                cursor: "pointer",
-                minHeight: "270px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = "scale(1.04)";
-                e.currentTarget.style.boxShadow =
-                  "0 14px 40px rgba(185,168,122,0.20)";
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow =
-                  "0 6px 32px rgba(185,168,122,0.12)";
+                fontSize: "2.5rem",
+                marginBottom: "1.2rem",
+                display: "inline-block",
               }}
             >
-              {/* Accent shape */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "-16px",
-                  right: "-16px",
-                  width: "38px",
-                  height: "38px",
-                  background: accentColor,
-                  opacity: 0.12,
-                  borderRadius: "50%",
-                  zIndex: 1,
-                }}
-              />
-              <div
-                className="card-body d-flex flex-column align-items-center justify-content-center py-4"
-                style={{ position: "relative", zIndex: 2 }}
-              >
-                <span
-                  className="mb-2 service-icon"
-                  style={{
-                    fontSize: "2.3rem",
-                    color: accentColor,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: "rgba(185,168,122,0.13)",
-                    borderRadius: "50%",
-                    width: "3.2rem",
-                    height: "3.2rem",
-                  }}
-                >
-                  {srv.icon}
-                </span>
-                <h5
-                  className="card-title service-title"
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "1.13rem",
-                    color: "#222",
-                    marginBottom: "0.7rem",
-                    fontFamily: "Montserrat, sans-serif",
-                  }}
-                >
-                  {srv.name}
-                </h5>
-                <p
-                  className="card-text service-desc"
-                  style={{
-                    color: "#7a6a2f",
-                    fontSize: "1.02rem",
-                    fontWeight: 500,
-                  }}
-                >
-                  {srv.desc}
-                </p>
-              </div>
+              {srv.icon}
             </div>
+            <h5
+              style={{
+                fontWeight: 600,
+                fontSize: "1.25rem",
+                color: "#2c2416",
+                marginBottom: "0.8rem",
+                fontFamily: "'Playfair Display', Georgia, serif",
+              }}
+            >
+              {srv.name}
+            </h5>
+            <p
+              style={{
+                color: "#6b5d4f",
+                fontSize: "0.95rem",
+                fontWeight: 400,
+                lineHeight: "1.7",
+                marginBottom: 0,
+              }}
+            >
+              {srv.desc}
+            </p>
           </div>
         ))}
       </div>
@@ -187,60 +165,22 @@ const Services: React.FC = () => (
     {/* Responsive styles */}
     <style>
       {`
-        @media (max-width: 1100px) {
-          #services-section .container-fluid {
-            padding: 2rem 0.7rem;
-          }
-          #services-section .services-grid {
-            gap: 1.2rem;
-          }
-        }
-        @media (max-width: 900px) {
+        @media (max-width: 992px) {
           #services-section .services-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
           }
         }
         @media (max-width: 650px) {
+          #services-section {
+            padding: 3rem 0 2rem 0 !important;
+          }
           #services-section .services-grid {
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 1.2rem;
           }
-          #services-section .card.service-card {
-            min-height: 155px;
-            font-size: 0.93rem;
-            margin-bottom: 0.8rem;
-            padding: 0.7rem 0.7rem;
-          }
-          #services-section .card-body {
-            padding: 1rem 0.3rem !important;
-          }
-          #services-section .service-icon {
-            font-size: 1.45rem !important;
-            width: 2.2rem !important;
-            height: 2.2rem !important;
-          }
-          #services-section .service-title {
-            font-size: 1rem !important;
-            margin-bottom: 0.4rem !important;
-          }
-          #services-section .service-desc {
-            font-size: 0.92rem !important;
-          }
-          #services-section h2 {
-            font-size: 1.35rem !important;
-          }
-        }
-        @media (max-width: 440px) {
-          #services-section .container-fluid {
-            padding: 0.7rem 0.1rem;
-          }
-          #services-section .card.service-card {
-            box-shadow: 0 2px 16px rgba(185,168,122,0.11);
-            min-height: 120px;
-            padding: 0.4rem 0.3rem;
-          }
-          #services-section .card-body {
-            padding: 0.7rem 0.1rem !important;
+          #services-section .service-card {
+            padding: 1.8rem 1.5rem !important;
           }
         }
       `}
