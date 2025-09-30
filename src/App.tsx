@@ -5,12 +5,16 @@ import About from "./pages/about/about";
 import Gallery from "./pages/gallery/gallery";
 import Home from "./pages/home/home";
 import Services from "./pages/services/services";
+import Testimonials from "./pages/testimonials/testimonials";
+import Contact from "./pages/contact/contact";
 
 const sectionIds = [
   "home-section",
-  "services-section",
-  "gallery-section",
   "about-section",
+  "services-section",
+  "testimonials-section",
+  "gallery-section",
+  "contact-section",
 ];
 
 const App: React.FC = () => {
@@ -51,8 +55,14 @@ const App: React.FC = () => {
         <section id="services-section">
           <Services />
         </section>
+        <section id="testimonials-section">
+          <Testimonials />
+        </section>
         <section id="gallery-section">
           <Gallery />
+        </section>
+        <section id="contact-section">
+          <Contact />
         </section>
       </main>
       <Footer />

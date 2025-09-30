@@ -1,22 +1,47 @@
 import React from "react";
 
 const services = [
-  { icon: "✂️", name: "Haircuts", desc: "Trendy styles for all ages." },
-  { icon: "🎨", name: "Hair Coloring", desc: "Vibrant and lasting colors." },
+  { 
+    icon: "✂️", 
+    name: "Haircuts & Styling", 
+    desc: "Transform your look with trendy cuts and professional styling for all hair types and ages.",
+    price: "From $25",
+    features: ["Consultation", "Wash & Dry", "Styling"]
+  },
+  { 
+    icon: "🎨", 
+    name: "Hair Coloring", 
+    desc: "Expert coloring services with premium products for vibrant, long-lasting results.",
+    price: "From $45",
+    features: ["Color Consultation", "Premium Products", "Aftercare"]
+  },
   {
     icon: "🧖‍♀️",
-    name: "Facials",
-    desc: "Rejuvenate your skin with our premium facial treatments.",
+    name: "Facial Treatments",
+    desc: "Rejuvenating facial treatments using high-quality products to refresh and revitalize your skin.",
+    price: "From $35",
+    features: ["Deep Cleansing", "Moisturizing", "Anti-Aging"]
   },
   {
     icon: "💅",
     name: "Manicure & Pedicure",
-    desc: "Pamper your hands and feet.",
+    desc: "Complete nail care services to pamper your hands and feet with attention to detail.",
+    price: "From $20",
+    features: ["Nail Shaping", "Cuticle Care", "Polish Application"]
   },
   {
     icon: "👰‍♀️",
     name: "Bridal Packages",
-    desc: "Special packages for your big day.",
+    desc: "Complete bridal beauty packages to make your special day absolutely perfect.",
+    price: "From $150",
+    features: ["Hair & Makeup", "Trial Session", "Touch-ups"]
+  },
+  {
+    icon: "💆‍♀️",
+    name: "Spa Services",
+    desc: "Relaxing spa treatments to unwind and rejuvenate your body and mind.",
+    price: "From $40",
+    features: ["Massage Therapy", "Aromatherapy", "Relaxation"]
   },
 ];
 
@@ -26,221 +51,405 @@ const Services: React.FC = () => (
   <section
     id="services-section"
     style={{
-      background: "linear-gradient(110deg, #f8f9fa 60%, #f3e9d2 100%)",
+      background: "linear-gradient(135deg, #f8f9fa 0%, #f3e9d2 50%, #ede0c4 100%)",
       width: "100vw",
-      padding: "4rem 0 3.5rem 0",
+      padding: "5rem 0 4rem 0",
       overflow: "hidden",
+      position: "relative",
     }}
   >
+    {/* Background decorative elements */}
+    <div
+      style={{
+        position: "absolute",
+        top: "20%",
+        left: "5%",
+        width: "120px",
+        height: "120px",
+        background: "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
+        borderRadius: "50%",
+        zIndex: 1,
+      }}
+    />
+    <div
+      style={{
+        position: "absolute",
+        bottom: "25%",
+        right: "8%",
+        width: "100px",
+        height: "100px",
+        background: "linear-gradient(45deg, rgba(185,168,122,0.06), rgba(185,168,122,0.02))",
+        borderRadius: "50%",
+        zIndex: 1,
+      }}
+    />
+    
     <div
       className="container-fluid"
       style={{
-        maxWidth: "1250px",
+        maxWidth: "1300px",
         margin: "0 auto",
-        borderRadius: "1.5rem",
-        background: "rgba(255,255,255,0.88)",
-        boxShadow: "0 8px 38px rgba(185,168,122,0.07)",
-        padding: "2.7rem 2.2rem",
+        position: "relative",
+        zIndex: 2,
+        padding: "0 1rem",
       }}
     >
-      <div style={{ marginBottom: "2.2rem", textAlign: "center" }}>
+      {/* Header Section */}
+      <div style={{ marginBottom: "3rem", textAlign: "center" }}>
+        <div style={{ marginBottom: "1rem" }}>
+          <span
+            style={{
+              background: "linear-gradient(90deg, #b9a87a, #d4c396)",
+              color: "#fff",
+              fontSize: "0.9rem",
+              fontWeight: 600,
+              padding: "0.5rem 1.5rem",
+              borderRadius: "2rem",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              boxShadow: "0 4px 15px rgba(185,168,122,0.2)",
+            }}
+          >
+            💎 Our Services
+          </span>
+        </div>
         <h2
           style={{
-            color: accentColor,
+            color: "#2c2c2c",
             fontFamily: "Montserrat, sans-serif",
             fontWeight: 700,
-            fontSize: "2.5rem",
-            letterSpacing: "1.2px",
-            marginBottom: "0.3rem",
-            position: "relative",
-            display: "inline-block",
+            fontSize: "3rem",
+            letterSpacing: "0.5px",
+            marginBottom: "1rem",
+            background: "linear-gradient(135deg, #2c2c2c 0%, #b9a87a 100%)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           }}
         >
-          Our Services
+          Premium Beauty Services
         </h2>
-        <span
-          style={{
-            display: "block",
-            height: "4px",
-            width: "55px",
-            backgroundColor: accentColor,
-            borderRadius: "2px",
-            margin: "6px auto 0",
-          }}
-        />
         <p
-          className="mt-3"
           style={{
-            color: "#4d3a00",
-            fontSize: "1.1rem",
+            color: "#5a5a5a",
+            fontSize: "1.2rem",
             fontWeight: 500,
-            maxWidth: "430px",
+            maxWidth: "600px",
             margin: "0 auto",
+            lineHeight: "1.6",
           }}
         >
-          Discover our range of premium beauty and grooming services, tailored
-          to elevate your style and well-being.
+          Discover our comprehensive range of beauty and wellness services, each designed to enhance your natural beauty and boost your confidence.
         </p>
       </div>
-      {/* Responsive grid for service cards */}
+
+      {/* Services Grid */}
       <div
         className="services-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
           gap: "2rem",
-          marginTop: "0.5rem",
+          marginTop: "1rem",
         }}
       >
         {services.map((srv, idx) => (
-          <div key={idx} style={{ display: "flex" }}>
+          <div key={idx} className="service-card-wrapper">
             <div
-              className="card h-100 text-center w-100 service-card"
+              className="card h-100 service-card"
               style={{
-                borderRadius: "1.2rem",
+                borderRadius: "1.5rem",
                 border: "none",
                 background: "rgba(255,255,255,0.95)",
-                boxShadow: "0 6px 32px rgba(185,168,122,0.12)",
-                transition:
-                  "transform 0.22s cubic-bezier(.4,2,.3,1), box-shadow 0.2s",
+                boxShadow: "0 8px 30px rgba(185,168,122,0.1)",
+                transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                 position: "relative",
                 overflow: "hidden",
                 cursor: "pointer",
-                minHeight: "270px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
+                padding: "1.5rem",
+                backdropFilter: "blur(10px)",
               }}
               onMouseOver={(e) => {
-                e.currentTarget.style.transform = "scale(1.04)";
-                e.currentTarget.style.boxShadow =
-                  "0 14px 40px rgba(185,168,122,0.20)";
+                e.currentTarget.style.transform = "translateY(-8px)";
+                e.currentTarget.style.boxShadow = "0 20px 50px rgba(185,168,122,0.2)";
               }}
               onMouseOut={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-                e.currentTarget.style.boxShadow =
-                  "0 6px 32px rgba(185,168,122,0.12)";
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 8px 30px rgba(185,168,122,0.1)";
               }}
             >
-              {/* Accent shape */}
+              {/* Gradient overlay */}
               <div
                 style={{
                   position: "absolute",
-                  top: "-16px",
-                  right: "-16px",
-                  width: "38px",
-                  height: "38px",
-                  background: accentColor,
-                  opacity: 0.12,
-                  borderRadius: "50%",
-                  zIndex: 1,
+                  top: "0",
+                  right: "0",
+                  width: "100px",
+                  height: "100px",
+                  background: "linear-gradient(135deg, rgba(185,168,122,0.05), transparent)",
+                  borderRadius: "0 1.5rem 0 100%",
                 }}
               />
-              <div
-                className="card-body d-flex flex-column align-items-center justify-content-center py-4"
-                style={{ position: "relative", zIndex: 2 }}
-              >
-                <span
-                  className="mb-2 service-icon"
-                  style={{
-                    fontSize: "2.3rem",
-                    color: accentColor,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    background: "rgba(185,168,122,0.13)",
-                    borderRadius: "50%",
-                    width: "3.2rem",
-                    height: "3.2rem",
-                  }}
-                >
-                  {srv.icon}
-                </span>
-                <h5
-                  className="card-title service-title"
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "1.13rem",
-                    color: "#222",
-                    marginBottom: "0.7rem",
-                    fontFamily: "Montserrat, sans-serif",
-                  }}
-                >
-                  {srv.name}
-                </h5>
+              
+              <div className="card-body p-0">
+                {/* Service Header */}
+                <div className="d-flex align-items-center mb-3">
+                  <div
+                    style={{
+                      fontSize: "2.5rem",
+                      background: "linear-gradient(135deg, #b9a87a, #d4c396)",
+                      borderRadius: "1rem",
+                      padding: "0.8rem",
+                      marginRight: "1rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      minWidth: "70px",
+                      height: "70px",
+                      boxShadow: "0 4px 15px rgba(185,168,122,0.2)",
+                    }}
+                  >
+                    {srv.icon}
+                  </div>
+                  <div>
+                    <h5
+                      style={{
+                        fontWeight: 700,
+                        fontSize: "1.3rem",
+                        color: "#2c2c2c",
+                        marginBottom: "0.3rem",
+                        fontFamily: "Montserrat, sans-serif",
+                      }}
+                    >
+                      {srv.name}
+                    </h5>
+                    <span
+                      style={{
+                        color: "#b9a87a",
+                        fontSize: "1.1rem",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {srv.price}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Service Description */}
                 <p
-                  className="card-text service-desc"
                   style={{
-                    color: "#7a6a2f",
-                    fontSize: "1.02rem",
+                    color: "#666",
+                    fontSize: "1rem",
                     fontWeight: 500,
+                    lineHeight: "1.6",
+                    marginBottom: "1.5rem",
                   }}
                 >
                   {srv.desc}
                 </p>
+
+                {/* Service Features */}
+                <div className="mb-3">
+                  <h6
+                    style={{
+                      fontSize: "0.9rem",
+                      fontWeight: 600,
+                      color: "#b9a87a",
+                      marginBottom: "0.8rem",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    Includes:
+                  </h6>
+                  <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                    {srv.features.map((feature, featureIdx) => (
+                      <li
+                        key={featureIdx}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          marginBottom: "0.4rem",
+                          fontSize: "0.95rem",
+                          color: "#555",
+                        }}
+                      >
+                        <span
+                          style={{
+                            color: "#b9a87a",
+                            marginRight: "0.5rem",
+                            fontSize: "0.8rem",
+                          }}
+                        >
+                          ✓
+                        </span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Book Now Button */}
+                <button
+                  style={{
+                    width: "100%",
+                    background: "linear-gradient(135deg, #b9a87a, #d4c396)",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "0.8rem",
+                    padding: "0.8rem 1.5rem",
+                    fontSize: "0.95rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.5px",
+                    textTransform: "uppercase",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    cursor: "pointer",
+                  }}
+                  onMouseOver={(e) => {
+                    (e.target as HTMLElement).style.transform = "scale(1.02)";
+                    (e.target as HTMLElement).style.background = "linear-gradient(135deg, #a89769, #c3b085)";
+                  }}
+                  onMouseOut={(e) => {
+                    (e.target as HTMLElement).style.transform = "scale(1)";
+                    (e.target as HTMLElement).style.background = "linear-gradient(135deg, #b9a87a, #d4c396)";
+                  }}
+                  onClick={() => window.open("tel:+94704840024", "_self")}
+                >
+                  Book Now
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
+      
+      {/* Call to Action */}
+      <div style={{ textAlign: "center", marginTop: "3rem" }}>
+        <p style={{ fontSize: "1.1rem", color: "#666", marginBottom: "1.5rem" }}>
+          Need a custom package or have questions about our services?
+        </p>
+        <a
+          href="tel:+94704840024"
+          style={{
+            background: "linear-gradient(135deg, #2c2c2c, #4a4a4a)",
+            color: "#fff",
+            padding: "1rem 2.5rem",
+            borderRadius: "2rem",
+            textDecoration: "none",
+            fontSize: "1.1rem",
+            fontWeight: 600,
+            letterSpacing: "0.5px",
+            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
+          onMouseOver={(e) => {
+            (e.target as HTMLElement).style.transform = "translateY(-2px)";
+            (e.target as HTMLElement).style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
+          }}
+          onMouseOut={(e) => {
+            (e.target as HTMLElement).style.transform = "translateY(0)";
+            (e.target as HTMLElement).style.boxShadow = "none";
+          }}
+        >
+          <i className="bi bi-telephone-fill"></i>
+          Contact Us Today
+        </a>
+      </div>
     </div>
     {/* Responsive styles */}
     <style>
       {`
-        @media (max-width: 1100px) {
-          #services-section .container-fluid {
-            padding: 2rem 0.7rem;
-          }
-          #services-section .services-grid {
-            gap: 1.2rem;
+        @media (max-width: 1200px) {
+          .services-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+            gap: 1.5rem !important;
           }
         }
-        @media (max-width: 900px) {
-          #services-section .services-grid {
-            grid-template-columns: repeat(2, 1fr);
+        
+        @media (max-width: 768px) {
+          .services-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
           }
-        }
-        @media (max-width: 650px) {
-          #services-section .services-grid {
-            grid-template-columns: 1fr;
-            gap: 1rem;
+          
+          #services-section {
+            padding: 3rem 0 2.5rem 0 !important;
           }
-          #services-section .card.service-card {
-            min-height: 155px;
-            font-size: 0.93rem;
-            margin-bottom: 0.8rem;
-            padding: 0.7rem 0.7rem;
-          }
-          #services-section .card-body {
-            padding: 1rem 0.3rem !important;
-          }
-          #services-section .service-icon {
-            font-size: 1.45rem !important;
-            width: 2.2rem !important;
-            height: 2.2rem !important;
-          }
-          #services-section .service-title {
-            font-size: 1rem !important;
-            margin-bottom: 0.4rem !important;
-          }
-          #services-section .service-desc {
-            font-size: 0.92rem !important;
-          }
+          
           #services-section h2 {
-            font-size: 1.35rem !important;
+            font-size: 2.2rem !important;
+          }
+          
+          .service-card {
+            padding: 1.2rem !important;
+          }
+          
+          .service-card .card-body .d-flex:first-child > div:first-child {
+            min-width: 60px !important;
+            height: 60px !important;
+            font-size: 2rem !important;
+          }
+          
+          .service-card h5 {
+            font-size: 1.2rem !important;
           }
         }
-        @media (max-width: 440px) {
+        
+        @media (max-width: 576px) {
+          #services-section {
+            padding: 2.5rem 0 2rem 0 !important;
+          }
+          
           #services-section .container-fluid {
-            padding: 0.7rem 0.1rem;
+            padding: 0 0.5rem !important;
           }
-          #services-section .card.service-card {
-            box-shadow: 0 2px 16px rgba(185,168,122,0.11);
-            min-height: 120px;
-            padding: 0.4rem 0.3rem;
+          
+          #services-section h2 {
+            font-size: 1.8rem !important;
           }
-          #services-section .card-body {
-            padding: 0.7rem 0.1rem !important;
+          
+          .service-card {
+            padding: 1rem !important;
+          }
+          
+          .service-card .card-body .d-flex:first-child {
+            flex-direction: column !important;
+            text-align: center !important;
+            align-items: center !important;
+          }
+          
+          .service-card .card-body .d-flex:first-child > div:first-child {
+            margin-right: 0 !important;
+            margin-bottom: 1rem !important;
+            min-width: 50px !important;
+            height: 50px !important;
+            font-size: 1.8rem !important;
+          }
+          
+          .service-card h5 {
+            font-size: 1.1rem !important;
+            margin-bottom: 0.2rem !important;
+          }
+          
+          .service-card p {
+            font-size: 0.95rem !important;
+          }
+          
+          .service-card button {
+            padding: 0.7rem 1.2rem !important;
+            font-size: 0.9rem !important;
+          }
+        }
+        
+        @media (max-width: 400px) {
+          .services-grid {
+            gap: 1rem !important;
+          }
+          
+          .service-card {
+            padding: 0.8rem !important;
           }
         }
       `}
