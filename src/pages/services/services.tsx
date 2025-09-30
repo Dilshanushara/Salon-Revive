@@ -1,48 +1,42 @@
 import React from "react";
 
 const services = [
-  { 
-    icon: "✂️", 
-    name: "Haircuts & Styling", 
+  {
+    icon: "✂️",
+    name: "Haircuts & Styling",
     desc: "Transform your look with trendy cuts and professional styling for all hair types and ages.",
-    price: "From $25",
-    features: ["Consultation", "Wash & Dry", "Styling"]
+    features: ["Consultation", "Wash & Dry", "Styling"],
   },
-  { 
-    icon: "🎨", 
-    name: "Hair Coloring", 
+  {
+    icon: "🎨",
+    name: "Hair Coloring",
     desc: "Expert coloring services with premium products for vibrant, long-lasting results.",
-    price: "From $45",
-    features: ["Color Consultation", "Premium Products", "Aftercare"]
+    features: ["Color Consultation", "Premium Products", "Aftercare"],
   },
   {
     icon: "🧖‍♀️",
     name: "Facial Treatments",
     desc: "Rejuvenating facial treatments using high-quality products to refresh and revitalize your skin.",
-    price: "From $35",
-    features: ["Deep Cleansing", "Moisturizing", "Anti-Aging"]
+    features: ["Deep Cleansing", "Moisturizing", "Anti-Aging"],
   },
   {
     icon: "💅",
     name: "Manicure & Pedicure",
     desc: "Complete nail care services to pamper your hands and feet with attention to detail.",
-    price: "From $20",
-    features: ["Nail Shaping", "Cuticle Care", "Polish Application"]
+    features: ["Nail Shaping", "Cuticle Care", "Polish Application"],
   },
   {
     icon: "👰‍♀️",
     name: "Bridal Packages",
     desc: "Complete bridal beauty packages to make your special day absolutely perfect.",
-    price: "From $150",
-    features: ["Hair & Makeup", "Trial Session", "Touch-ups"]
+    features: ["Hair & Makeup", "Trial Session", "Touch-ups"],
   },
-  {
-    icon: "💆‍♀️",
-    name: "Spa Services",
-    desc: "Relaxing spa treatments to unwind and rejuvenate your body and mind.",
-    price: "From $40",
-    features: ["Massage Therapy", "Aromatherapy", "Relaxation"]
-  },
+  // {
+  //   icon: "💆‍♀️",
+  //   name: "Spa Services",
+  //   desc: "Relaxing spa treatments to unwind and rejuvenate your body and mind.",
+  //   features: ["Massage Therapy", "Aromatherapy", "Relaxation"],
+  // },
 ];
 
 const accentColor = "#b9a87a";
@@ -51,7 +45,8 @@ const Services: React.FC = () => (
   <section
     id="services-section"
     style={{
-      background: "linear-gradient(135deg, #f8f9fa 0%, #f3e9d2 50%, #ede0c4 100%)",
+      background:
+        "linear-gradient(135deg, #f8f9fa 0%, #f3e9d2 50%, #ede0c4 100%)",
       width: "100vw",
       padding: "5rem 0 4rem 0",
       overflow: "hidden",
@@ -66,7 +61,8 @@ const Services: React.FC = () => (
         left: "5%",
         width: "120px",
         height: "120px",
-        background: "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
+        background:
+          "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
         borderRadius: "50%",
         zIndex: 1,
       }}
@@ -78,12 +74,13 @@ const Services: React.FC = () => (
         right: "8%",
         width: "100px",
         height: "100px",
-        background: "linear-gradient(45deg, rgba(185,168,122,0.06), rgba(185,168,122,0.02))",
+        background:
+          "linear-gradient(45deg, rgba(185,168,122,0.06), rgba(185,168,122,0.02))",
         borderRadius: "50%",
         zIndex: 1,
       }}
     />
-    
+
     <div
       className="container-fluid"
       style={{
@@ -139,7 +136,8 @@ const Services: React.FC = () => (
             lineHeight: "1.6",
           }}
         >
-          Discover our comprehensive range of beauty and wellness services, each designed to enhance your natural beauty and boost your confidence.
+          Discover our comprehensive range of beauty and wellness services, each
+          designed to enhance your natural beauty and boost your confidence.
         </p>
       </div>
 
@@ -171,11 +169,13 @@ const Services: React.FC = () => (
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = "translateY(-8px)";
-                e.currentTarget.style.boxShadow = "0 20px 50px rgba(185,168,122,0.2)";
+                e.currentTarget.style.boxShadow =
+                  "0 20px 50px rgba(185,168,122,0.2)";
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 8px 30px rgba(185,168,122,0.1)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 30px rgba(185,168,122,0.1)";
               }}
             >
               {/* Gradient overlay */}
@@ -186,11 +186,12 @@ const Services: React.FC = () => (
                   right: "0",
                   width: "100px",
                   height: "100px",
-                  background: "linear-gradient(135deg, rgba(185,168,122,0.05), transparent)",
+                  background:
+                    "linear-gradient(135deg, rgba(185,168,122,0.05), transparent)",
                   borderRadius: "0 1.5rem 0 100%",
                 }}
               />
-              
+
               <div className="card-body p-0">
                 {/* Service Header */}
                 <div className="d-flex align-items-center mb-3">
@@ -230,7 +231,7 @@ const Services: React.FC = () => (
                         fontWeight: 600,
                       }}
                     >
-                      {srv.price}
+                      {/* {srv.price} */}
                     </span>
                   </div>
                 </div>
@@ -307,11 +308,13 @@ const Services: React.FC = () => (
                   }}
                   onMouseOver={(e) => {
                     (e.target as HTMLElement).style.transform = "scale(1.02)";
-                    (e.target as HTMLElement).style.background = "linear-gradient(135deg, #a89769, #c3b085)";
+                    (e.target as HTMLElement).style.background =
+                      "linear-gradient(135deg, #a89769, #c3b085)";
                   }}
                   onMouseOut={(e) => {
                     (e.target as HTMLElement).style.transform = "scale(1)";
-                    (e.target as HTMLElement).style.background = "linear-gradient(135deg, #b9a87a, #d4c396)";
+                    (e.target as HTMLElement).style.background =
+                      "linear-gradient(135deg, #b9a87a, #d4c396)";
                   }}
                   onClick={() => window.open("tel:+94704840024", "_self")}
                 >
@@ -322,10 +325,12 @@ const Services: React.FC = () => (
           </div>
         ))}
       </div>
-      
+
       {/* Call to Action */}
       <div style={{ textAlign: "center", marginTop: "3rem" }}>
-        <p style={{ fontSize: "1.1rem", color: "#666", marginBottom: "1.5rem" }}>
+        <p
+          style={{ fontSize: "1.1rem", color: "#666", marginBottom: "1.5rem" }}
+        >
           Need a custom package or have questions about our services?
         </p>
         <a
@@ -346,7 +351,8 @@ const Services: React.FC = () => (
           }}
           onMouseOver={(e) => {
             (e.target as HTMLElement).style.transform = "translateY(-2px)";
-            (e.target as HTMLElement).style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
+            (e.target as HTMLElement).style.boxShadow =
+              "0 10px 30px rgba(0,0,0,0.2)";
           }}
           onMouseOut={(e) => {
             (e.target as HTMLElement).style.transform = "translateY(0)";

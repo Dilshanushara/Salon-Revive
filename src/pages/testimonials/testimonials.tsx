@@ -2,32 +2,32 @@ import React from "react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Amali Perera",
     rating: 5,
     text: "Absolutely amazing experience! The staff is so professional and my hair has never looked better. I've been coming here for over a year now.",
     service: "Hair Coloring & Cut",
-    image: "👩‍🦱"
+    image: "👩‍🦱",
   },
   {
-    name: "Maya Perera",
+    name: "Sarah Fernando",
     rating: 5,
     text: "The bridal package was perfect for my wedding day. They made me feel like a princess! Highly recommend for any special occasion.",
     service: "Bridal Package",
-    image: "👰‍♀️"
+    image: "👰‍♀️",
   },
   {
     name: "Anjali Silva",
     rating: 5,
     text: "Love the relaxing atmosphere and the quality of service. The facial treatment left my skin glowing for weeks!",
     service: "Facial Treatment",
-    image: "🧖‍♀️"
+    image: "🧖‍♀️",
   },
   {
     name: "Priya Mendis",
     rating: 5,
     text: "Best salon in Matara! The team really knows what they're doing. My nails always look perfect after visiting here.",
     service: "Manicure & Pedicure",
-    image: "💅"
+    image: "💅",
   },
 ];
 
@@ -52,7 +52,8 @@ const Testimonials: React.FC = () => (
         right: "5%",
         width: "150px",
         height: "150px",
-        background: "linear-gradient(45deg, rgba(185,168,122,0.1), rgba(185,168,122,0.05))",
+        background:
+          "linear-gradient(45deg, rgba(185,168,122,0.1), rgba(185,168,122,0.05))",
         borderRadius: "50%",
         zIndex: 1,
       }}
@@ -64,7 +65,8 @@ const Testimonials: React.FC = () => (
         left: "3%",
         width: "100px",
         height: "100px",
-        background: "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
+        background:
+          "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
         borderRadius: "50%",
         zIndex: 1,
       }}
@@ -119,7 +121,8 @@ const Testimonials: React.FC = () => (
             lineHeight: "1.6",
           }}
         >
-          Don't just take our word for it - hear from our satisfied clients about their experiences at Salon Revive.
+          Don't just take our word for it - hear from our satisfied clients
+          about their experiences at Salon Revive.
         </p>
       </div>
 
@@ -145,14 +148,20 @@ const Testimonials: React.FC = () => (
               cursor: "pointer",
             }}
             onMouseOver={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-5px)";
-              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(185,168,122,0.4)";
+              (e.currentTarget as HTMLElement).style.transform =
+                "translateY(-5px)";
+              (e.currentTarget as HTMLElement).style.background =
+                "rgba(255,255,255,0.08)";
+              (e.currentTarget as HTMLElement).style.borderColor =
+                "rgba(185,168,122,0.4)";
             }}
             onMouseOut={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-              (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)";
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(185,168,122,0.2)";
+              (e.currentTarget as HTMLElement).style.transform =
+                "translateY(0)";
+              (e.currentTarget as HTMLElement).style.background =
+                "rgba(255,255,255,0.05)";
+              (e.currentTarget as HTMLElement).style.borderColor =
+                "rgba(185,168,122,0.2)";
             }}
           >
             {/* Stars */}
@@ -258,7 +267,8 @@ const Testimonials: React.FC = () => (
           }}
           onMouseOver={(e) => {
             (e.target as HTMLElement).style.transform = "translateY(-3px)";
-            (e.target as HTMLElement).style.boxShadow = "0 15px 35px rgba(185,168,122,0.3)";
+            (e.target as HTMLElement).style.boxShadow =
+              "0 15px 35px rgba(185,168,122,0.3)";
           }}
           onMouseOut={(e) => {
             (e.target as HTMLElement).style.transform = "translateY(0)";
