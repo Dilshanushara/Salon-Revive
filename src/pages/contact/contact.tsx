@@ -4,8 +4,8 @@ const accentColor = "#b9a87a";
 
 const businessHours = [
   { day: "Monday - Friday", hours: "9:00 AM - 7:00 PM" },
-  { day: "Saturday", hours: "9:00 AM - 6:00 PM" },
-  { day: "Sunday", hours: "10:00 AM - 5:00 PM" },
+  { day: "Saturday - Sunday ", hours: "9:00 AM - 6:00 PM" },
+  // { day: "Sunday", hours: "9:00 AM - 6:00 PM" },
 ];
 
 const contactInfo = [
@@ -48,7 +48,8 @@ const Contact: React.FC = () => (
         left: "5%",
         width: "150px",
         height: "150px",
-        background: "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
+        background:
+          "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
         borderRadius: "50%",
         zIndex: 1,
       }}
@@ -60,7 +61,8 @@ const Contact: React.FC = () => (
         right: "8%",
         width: "100px",
         height: "100px",
-        background: "linear-gradient(45deg, rgba(185,168,122,0.06), rgba(185,168,122,0.02))",
+        background:
+          "linear-gradient(45deg, rgba(185,168,122,0.06), rgba(185,168,122,0.02))",
         borderRadius: "50%",
         zIndex: 1,
       }}
@@ -119,7 +121,8 @@ const Contact: React.FC = () => (
             lineHeight: "1.6",
           }}
         >
-          Ready to book your appointment or have questions? We're here to help you look and feel your best.
+          Ready to book your appointment or have questions? We're here to help
+          you look and feel your best.
         </p>
       </div>
 
@@ -162,12 +165,16 @@ const Contact: React.FC = () => (
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                   onMouseOver={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "rgba(185,168,122,0.1)";
-                    (e.currentTarget as HTMLElement).style.transform = "translateX(5px)";
+                    (e.currentTarget as HTMLElement).style.background =
+                      "rgba(185,168,122,0.1)";
+                    (e.currentTarget as HTMLElement).style.transform =
+                      "translateX(5px)";
                   }}
                   onMouseOut={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "rgba(185,168,122,0.05)";
-                    (e.currentTarget as HTMLElement).style.transform = "translateX(0)";
+                    (e.currentTarget as HTMLElement).style.background =
+                      "rgba(185,168,122,0.05)";
+                    (e.currentTarget as HTMLElement).style.transform =
+                      "translateX(0)";
                   }}
                 >
                   <div
@@ -184,7 +191,10 @@ const Contact: React.FC = () => (
                       height: "50px",
                     }}
                   >
-                    <i className={contact.icon} style={{ fontSize: "1.2rem" }}></i>
+                    <i
+                      className={contact.icon}
+                      style={{ fontSize: "1.2rem" }}
+                    ></i>
                   </div>
                   <div>
                     <div
@@ -242,7 +252,8 @@ const Contact: React.FC = () => (
               }}
               onMouseOver={(e) => {
                 (e.target as HTMLElement).style.transform = "translateY(-3px)";
-                (e.target as HTMLElement).style.boxShadow = "0 15px 35px rgba(185,168,122,0.3)";
+                (e.target as HTMLElement).style.boxShadow =
+                  "0 15px 35px rgba(185,168,122,0.3)";
               }}
               onMouseOut={(e) => {
                 (e.target as HTMLElement).style.transform = "translateY(0)";
@@ -295,12 +306,16 @@ const Contact: React.FC = () => (
                     transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                   onMouseOver={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "rgba(185,168,122,0.1)";
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(185,168,122,0.2)";
+                    (e.currentTarget as HTMLElement).style.background =
+                      "rgba(185,168,122,0.1)";
+                    (e.currentTarget as HTMLElement).style.borderColor =
+                      "rgba(185,168,122,0.2)";
                   }}
                   onMouseOut={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "rgba(185,168,122,0.05)";
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(185,168,122,0.1)";
+                    (e.currentTarget as HTMLElement).style.background =
+                      "rgba(185,168,122,0.05)";
+                    (e.currentTarget as HTMLElement).style.borderColor =
+                      "rgba(185,168,122,0.1)";
                   }}
                 >
                   <span
@@ -328,7 +343,8 @@ const Contact: React.FC = () => (
             {/* Special Notice */}
             <div
               style={{
-                background: "linear-gradient(135deg, rgba(185,168,122,0.1), rgba(185,168,122,0.05))",
+                background:
+                  "linear-gradient(135deg, rgba(185,168,122,0.1), rgba(185,168,122,0.05))",
                 border: "1px solid rgba(185,168,122,0.2)",
                 borderRadius: "1rem",
                 padding: "1.5rem",
@@ -368,12 +384,14 @@ const Contact: React.FC = () => (
                   lineHeight: "1.5",
                 }}
               >
-                While appointments are recommended, we also accept walk-ins based on availability. Call ahead to ensure your preferred time slot.
+                While appointments are recommended, we also accept walk-ins
+                based on availability. Call ahead to ensure your preferred time
+                slot.
               </p>
             </div>
 
             {/* Social Media Links */}
-            <div>
+            {/* <div>
               <h4
                 style={{
                   color: "#2c2c2c",
@@ -422,7 +440,7 @@ const Contact: React.FC = () => (
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

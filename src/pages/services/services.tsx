@@ -291,7 +291,7 @@ const Services: React.FC = () => (
                 </div>
 
                 {/* Book Now Button */}
-                <button
+                {/* <button
                   style={{
                     width: "100%",
                     background: "linear-gradient(135deg, #b9a87a, #d4c396)",
@@ -319,7 +319,7 @@ const Services: React.FC = () => (
                   onClick={() => window.open("tel:+94704840024", "_self")}
                 >
                   Book Now
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

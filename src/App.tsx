@@ -46,24 +46,12 @@ const App: React.FC = () => {
     <div>
       <Header activeSection={activeSection} />
       <main>
-        <section id="home-section">
-          <Home />
-        </section>
-        <section id="about-section">
-          <About />
-        </section>
-        <section id="services-section">
-          <Services />
-        </section>
-        <section id="testimonials-section">
-          <Testimonials />
-        </section>
-        <section id="gallery-section">
-          <Gallery />
-        </section>
-        <section id="contact-section">
-          <Contact />
-        </section>
+        <Home />
+        <About />
+        <Services />
+        <Testimonials />
+        <Gallery />
+        <Contact />
       </main>
       <Footer />
     </div>
