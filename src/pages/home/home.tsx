@@ -10,14 +10,16 @@ const Home: React.FC = () => {
   return (
     <section
       id="home-section"
-      className="py-5"
       style={{
-        background: "linear-gradient(135deg, #f8f9fa 0%, #f3e9d2 50%, #e6d7b3 100%)",
+        background:
+          "linear-gradient(135deg, #f8f9fa 0%, #f3e9d2 50%, #e6d7b3 100%)",
         minHeight: "90vh",
         display: "flex",
         alignItems: "center",
         position: "relative",
         overflow: "hidden",
+        paddingTop: "3rem",
+        paddingBottom: "3rem",
       }}
     >
       {/* Background decorative elements */}
@@ -28,7 +30,8 @@ const Home: React.FC = () => {
           right: "10%",
           width: "200px",
           height: "200px",
-          background: "linear-gradient(45deg, rgba(185,168,122,0.1), rgba(185,168,122,0.05))",
+          background:
+            "linear-gradient(45deg, rgba(185,168,122,0.1), rgba(185,168,122,0.05))",
           borderRadius: "50%",
           zIndex: 1,
         }}
@@ -40,13 +43,17 @@ const Home: React.FC = () => {
           left: "5%",
           width: "150px",
           height: "150px",
-          background: "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
+          background:
+            "linear-gradient(45deg, rgba(185,168,122,0.08), rgba(185,168,122,0.03))",
           borderRadius: "50%",
           zIndex: 1,
         }}
       />
-      
-      <div className="container py-5" style={{ position: "relative", zIndex: 2 }}>
+
+      <div
+        className="container py-5"
+        style={{ position: "relative", zIndex: 2 }}
+      >
         <div className="row align-items-center">
           {/* Left: Text Content */}
           <div className="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
@@ -82,12 +89,14 @@ const Home: React.FC = () => {
               }}
             >
               Transform Your Look at{" "}
-              <span style={{ 
-                color: "#b9a87a",
-                WebkitTextFillColor: "#b9a87a",
-                display: "block",
-                marginTop: "0.5rem"
-              }}>
+              <span
+                style={{
+                  color: "#b9a87a",
+                  WebkitTextFillColor: "#b9a87a",
+                  display: "block",
+                  marginTop: "0.5rem",
+                }}
+              >
                 Salon Revive
               </span>
             </h1>
@@ -103,14 +112,17 @@ const Home: React.FC = () => {
                 margin: "0 auto 2.5rem auto",
               }}
             >
-              Experience luxury beauty treatments with our expert stylists. From cutting-edge haircuts to rejuvenating spa services, we bring out your natural beauty.
+              Experience luxury beauty treatments with our expert stylists. From
+              cutting-edge haircuts to rejuvenating spa services, we bring out
+              your natural beauty.
             </p>
             <div className="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-lg-start gap-3">
               <a
                 href="tel:+94704840024"
                 className="btn btn-lg"
                 style={{
-                  background: "linear-gradient(135deg, #b9a87a 0%, #d4c396 100%)",
+                  background:
+                    "linear-gradient(135deg, #b9a87a 0%, #d4c396 100%)",
                   color: "#fff",
                   fontWeight: 700,
                   borderRadius: "3rem",
@@ -123,12 +135,15 @@ const Home: React.FC = () => {
                   textTransform: "uppercase",
                 }}
                 onMouseOver={(e) => {
-                  (e.target as HTMLElement).style.transform = "translateY(-3px)";
-                  (e.target as HTMLElement).style.boxShadow = "0 12px 35px rgba(185,168,122,0.4)";
+                  (e.target as HTMLElement).style.transform =
+                    "translateY(-3px)";
+                  (e.target as HTMLElement).style.boxShadow =
+                    "0 12px 35px rgba(185,168,122,0.4)";
                 }}
                 onMouseOut={(e) => {
                   (e.target as HTMLElement).style.transform = "translateY(0)";
-                  (e.target as HTMLElement).style.boxShadow = "0 8px 25px rgba(185,168,122,0.3)";
+                  (e.target as HTMLElement).style.boxShadow =
+                    "0 8px 25px rgba(185,168,122,0.3)";
                 }}
               >
                 <i className="bi bi-calendar-check me-2"></i>
@@ -150,7 +165,8 @@ const Home: React.FC = () => {
                 onMouseOver={(e) => {
                   (e.target as HTMLElement).style.background = "#b9a87a";
                   (e.target as HTMLElement).style.color = "#fff";
-                  (e.target as HTMLElement).style.transform = "translateY(-2px)";
+                  (e.target as HTMLElement).style.transform =
+                    "translateY(-2px)";
                 }}
                 onMouseOut={(e) => {
                   (e.target as HTMLElement).style.background = "transparent";
@@ -161,21 +177,69 @@ const Home: React.FC = () => {
                 View Services
               </a>
             </div>
-            
+
             {/* Trust indicators */}
             <div className="mt-4 pt-3">
               <div className="d-flex flex-wrap justify-content-center justify-content-lg-start align-items-center gap-4">
                 <div className="d-flex align-items-center">
-                  <span style={{ color: "#b9a87a", fontSize: "1.2rem", marginRight: "0.5rem" }}>⭐⭐⭐⭐⭐</span>
-                  <span style={{ fontSize: "0.95rem", color: "#666", fontWeight: 500 }}>500+ Happy Clients</span>
+                  <span
+                    style={{
+                      color: "#b9a87a",
+                      fontSize: "1.2rem",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    ⭐⭐⭐⭐⭐
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "0.95rem",
+                      color: "#666",
+                      fontWeight: 500,
+                    }}
+                  >
+                    500+ Happy Clients
+                  </span>
                 </div>
                 <div className="d-flex align-items-center">
-                  <span style={{ color: "#b9a87a", fontSize: "1.1rem", marginRight: "0.5rem" }}>🏆</span>
-                  <span style={{ fontSize: "0.95rem", color: "#666", fontWeight: 500 }}>Award Winning</span>
+                  <span
+                    style={{
+                      color: "#b9a87a",
+                      fontSize: "1.1rem",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    🏆
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "0.95rem",
+                      color: "#666",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Award Winning
+                  </span>
                 </div>
                 <div className="d-flex align-items-center">
-                  <span style={{ color: "#b9a87a", fontSize: "1.1rem", marginRight: "0.5rem" }}>💎</span>
-                  <span style={{ fontSize: "0.95rem", color: "#666", fontWeight: 500 }}>Premium Products</span>
+                  <span
+                    style={{
+                      color: "#b9a87a",
+                      fontSize: "1.1rem",
+                      marginRight: "0.5rem",
+                    }}
+                  >
+                    💎
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "0.95rem",
+                      color: "#666",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Premium Products
+                  </span>
                 </div>
               </div>
             </div>
@@ -202,12 +266,13 @@ const Home: React.FC = () => {
                   right: "-20px",
                   width: "100%",
                   height: "100%",
-                  background: "linear-gradient(135deg, rgba(185,168,122,0.1) 0%, rgba(185,168,122,0.05) 100%)",
+                  background:
+                    "linear-gradient(135deg, rgba(185,168,122,0.1) 0%, rgba(185,168,122,0.05) 100%)",
                   borderRadius: "2rem",
                   zIndex: 1,
                 }}
               />
-              
+
               {/* Main image */}
               <div
                 style={{
@@ -233,14 +298,15 @@ const Home: React.FC = () => {
                     transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
                   onMouseOver={(e) => {
-                    (e.target as HTMLImageElement).style.transform = "scale(1.05)";
+                    (e.target as HTMLImageElement).style.transform =
+                      "scale(1.05)";
                   }}
                   onMouseOut={(e) => {
                     (e.target as HTMLImageElement).style.transform = "scale(1)";
                   }}
                 />
               </div>
-              
+
               {/* Floating badge */}
               <div
                 style={{
@@ -255,19 +321,38 @@ const Home: React.FC = () => {
                   backdropFilter: "blur(10px)",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                  }}
+                >
                   <span style={{ fontSize: "1.2rem" }}>💎</span>
                   <div>
-                    <div style={{ fontSize: "0.9rem", fontWeight: 700, color: "#b9a87a", marginBottom: "2px" }}>
+                    <div
+                      style={{
+                        fontSize: "0.9rem",
+                        fontWeight: 700,
+                        color: "#b9a87a",
+                        marginBottom: "2px",
+                      }}
+                    >
                       PREMIUM
                     </div>
-                    <div style={{ fontSize: "0.8rem", color: "#666", fontWeight: 500 }}>
+                    <div
+                      style={{
+                        fontSize: "0.8rem",
+                        color: "#666",
+                        fontWeight: 500,
+                      }}
+                    >
                       Since 2020
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               {/* Bottom badge */}
               <div
                 style={{
@@ -324,6 +409,12 @@ const Home: React.FC = () => {
           }
           
           @media (max-width: 575px) {
+            #home-section {
+              padding-top: 1.5rem !important;
+              padding-bottom: 1.5rem !important;
+              align-items: flex-start !important;
+              min-height: 70vh !important;
+            }
             .display-2 {
               font-size: 2rem !important;
             }

@@ -44,10 +44,10 @@ const Gallery: React.FC = () => (
         <p className="ctaText">
           Love what you see? Book your transformation today!
         </p>
-        <a href="tel:+94704840024" className="ctaButton">
+        {/* <a href="tel:+94704840024" className="ctaButton">
           <i className="bi bi-camera"></i>
           Start Your Transformation
-        </a>
+        </a> */}
       </div>
     </div>
   </section>
